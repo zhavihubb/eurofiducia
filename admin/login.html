@@ -16,10 +16,7 @@
       </div>
       <h2>Admin Portal</h2>
       <p>Secure administrative access to manage users, transactions, compliance, and platform operations.</p>
-      <div style="margin-top:40px;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;">
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);">🔐 Demo Admin Login</p>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.8);margin-top:8px;">Email: admin@eurofiducia.eu<br>Password: admin123</p>
-      </div>
+      
     </div>
   </div>
   <div class="auth-main">
@@ -32,11 +29,11 @@
       <form onsubmit="return doAdminLogin(event)">
         <div class="form-group">
           <label class="form-label">Admin Email</label>
-          <input type="email" class="form-input" id="email" required value="admin@eurofiducia.eu">
+          <input type="email" class="form-input" id="email" required placeholder="Email address" autocomplete="email">
         </div>
         <div class="form-group">
           <label class="form-label">Password</label>
-          <input type="password" class="form-input" id="password" required value="admin123">
+          <input type="password" class="form-input" id="password" required placeholder="Password" autocomplete="current-password">
         </div>
         <div id="loginError" class="form-error hidden"></div>
         <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In to Admin Panel</button>
