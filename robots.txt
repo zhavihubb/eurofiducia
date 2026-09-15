@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /eurofiducia-single-file.html
+
+Sitemap: https://eurofiducia.com/sitemap.xml
