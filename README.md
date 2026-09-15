@@ -1,8 +1,8 @@
-# 🏦 EuroVest — Investment Platform
+# 🏦 EuroFiducia — Investment Platform
 
 **France 🇫🇷 & Italy 🇮🇹** — A multi-region investment platform built for European and global investors.
 
-![EuroVest](https://img.shields.io/badge/EuroVest-Investment_Platform-0055A4)
+![EuroFiducia](https://img.shields.io/badge/EuroFiducia-Investment_Platform-0055A4)
 ![Languages](https://img.shields.io/badge/Languages-10-008C45)
 ![Loans](https://img.shields.io/badge/Loan_Types-12-blue)
 ![Portfolios](https://img.shields.io/badge/Portfolios-8-0A1A3F)
@@ -12,7 +12,7 @@
 
 ## 💰 Overview
 
-EuroVest is a fully responsive, multi-language investment platform serving French and Italian markets with European and global investment opportunities. The platform includes a complete loan service, bank account verification, email/SMS notification system, motivational email templates, cryptocurrency deposit support, and admin/user dashboards — with optional cross-device data persistence via a lightweight Node.js backend.
+EuroFiducia is a fully responsive, multi-language investment platform serving French and Italian markets with European and global investment opportunities. The platform includes a complete loan service, bank account verification, email/SMS notification system, motivational email templates, cryptocurrency deposit support, and admin/user dashboards — with optional cross-device data persistence via a lightweight Node.js backend.
 
 ## ✨ Features
 
@@ -24,7 +24,7 @@ EuroVest is a fully responsive, multi-language investment platform serving Frenc
 
 ### 🪙 Account Numbers on Approval
 - When an admin approves a user account, the system automatically generates:
-  - **EuroVest Account Number** (format: `EV-YYYY-XXXXXXXX` — unique per user)
+  - **EuroFiducia Account Number** (format: `EV-YYYY-XXXXXXXX` — unique per user)
   - **Client / Member ID** (format: `EV-CL-XXXXX` — unique per user)
 - These identifiers appear on:
   - The **approval email** sent to the user
@@ -78,7 +78,7 @@ EuroVest is a fully responsive, multi-language investment platform serving Frenc
 - 10 pre-built motivational email templates
 - Admin can send to single, multiple, or all users
 - Personalized with {name} placeholders
-- Delivered to user email AND dashboard in official EuroVest template
+- Delivered to user email AND dashboard in official EuroFiducia template
 
 ### 💼 Investment Portfolios (8 Portfolios)
 - France: Conservative, Balanced, Growth
@@ -102,12 +102,12 @@ EuroVest is a fully responsive, multi-language investment platform serving Frenc
 ## 🗂️ Project Structure
 
 ```
-eurovest/
+eurofiducia/
 ├── index.html              # Landing page
 ├── markets.html            # Markets & all services overview
 ├── loans.html              # Full loans service page (12 loan types)
 ├── portfolios.html         # Investment portfolios
-├── about.html              # About EuroVest
+├── about.html              # About EuroFiducia
 ├── register.html           # 5-step registration (bank linking optional)
 ├── login.html              # User login
 ├── reset.html              # Password reset
@@ -149,11 +149,11 @@ eurovest/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/frazierjoseph121112-dev/eurovest-investment.git
+   git clone https://github.com/frazierjoseph121112-dev/eurofiducia.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd eurovest-investment
+   cd eurofiducia
    ```
 3. Serve locally:
    ```bash
@@ -165,8 +165,8 @@ eurovest/
 
 1. Clone and start the backend:
    ```bash
-   git clone https://github.com/frazierjoseph121112-dev/eurovest-investment.git
-   cd eurovest-investment/server
+   git clone https://github.com/frazierjoseph121112-dev/eurofiducia.git
+   cd eurofiducia/server
    node server.js
    ```
 2. Visit `http://localhost:3000` (the server serves the frontend too)
@@ -175,7 +175,7 @@ eurovest/
 
 ### Admin Access
 - **URL:** `admin/dashboard.html` (or `admin/login.html`)
-- **Email:** `admin@eurovest.eu`
+- **Email:** `admin@eurofiducia.eu`
 - **Password:** `admin123`
 
 ## 🛠️ Technology Stack
@@ -201,4 +201,4 @@ This project is proprietary. All rights reserved.
 
 ---
 
-**EuroVest** — Invest Across Global Markets 🌍
+**EuroFiducia** — Invest Across Global Markets 🌍

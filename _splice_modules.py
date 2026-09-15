@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import io
 
-APP = '/workspace/eurovest-investment/assets/js/app.js'
+APP = '/workspace/eurofiducia/assets/js/app.js'
 with io.open(APP, 'r', encoding='utf-8') as f:
     src = f.read()
 
@@ -11,15 +11,15 @@ assert marker in src
 INSERT = r'''// ===================== COUNTRY-SPECIFIC DEPOSIT METHODS =====================
 // Each supported country gets its own visible set of deposit methods shown on
 // the user's Deposit page. Methods include cryptocurrency (always available,
-// gas fee covered by EuroVest), SEPA / local bank transfer with country-specific
+// gas fee covered by EuroFiducia), SEPA / local bank transfer with country-specific
 // beneficiary instructions, card payment, open banking / instant payment rails,
 // and (where relevant) local mobile/retail cash options. Admin can edit the bank
 // beneficiary details from the dashboard and the edits persist via EV.store.
 EV.depositMethods = {
   // Default bank beneficiary + per-country local payment details. Editable.
   _defaultsBank: {
-    beneficiary: 'EUROVEST SAS',
-    bankName: 'BNP Paribas \u2014 EuroVest Client Account',
+    beneficiary: 'EUROFIDUCIA SAS',
+    bankName: 'BNP Paribas \u2014 EuroFiducia Client Account',
     iban: 'FR76 3000 4028 3700 0123 4567 890',
     bic: 'BNPAFRPP',
     referencePrefix: 'EV-DEP'
@@ -46,7 +46,7 @@ EV.depositMethods = {
     },
     sepa: {
       id:'sepa', icon:'\ud83c\udfeb', label:'SEPA Bank Transfer', kind:'bank',
-      desc:'Standard SEPA credit transfer in euros. Funds arrive within 1\u20132 business days. Free for the user; EuroVest covers intermediary charges.',
+      desc:'Standard SEPA credit transfer in euros. Funds arrive within 1\u20132 business days. Free for the user; EuroFiducia covers intermediary charges.',
       note:'Use your unique reference so we can match your deposit automatically.'
     },
     card: {
@@ -67,7 +67,7 @@ EV.depositMethods = {
         desc:'French SEPA Instant transfer \u2014 funds credited in under 10 seconds, 24/7.',
         note:'Supported by Cr\u00e9dit Agricole, BNP Paribas, Soci\u00e9t\u00e9 G\u00e9n\u00e9rale, La Banque Postale and others.' },
       { id:'fr_livret', icon:'\ud83d\udcb5', label:'Livret / LDDS Transfer', kind:'bank',
-        desc:'Transfer from your Livret A or LDDS savings account to your EuroVest account.',
+        desc:'Transfer from your Livret A or LDDS savings account to your EuroFiducia account.',
         note:'Regulated savings withdrawals may take 1\u20132 business days.' }
     ],
     IT: [
@@ -115,7 +115,7 @@ EV.depositMethods = {
     other: [
       { id:'intl_swift', icon:'\ud83c\udf10', label:'International Wire (SWIFT)', kind:'bank',
         desc:'International wire transfer in EUR or your local currency.',
-        note:'SWIFT transfers may take 2\u20135 business days. EuroVest covers receiving fees.' }
+        note:'SWIFT transfers may take 2\u20135 business days. EuroFiducia covers receiving fees.' }
     ]
   },
   // Build the full list of deposit methods for a given country code.

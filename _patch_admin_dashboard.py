@@ -124,7 +124,7 @@ new_tpl_preview_end = (
     '              <p class="text-muted text-sm" style="margin-bottom:16px;">Send a short motivational SMS to all users who opted in to SMS notifications. SMS is delivered to their registered phone number. Use <code>{name}</code> for personalization (keep under 160 characters).</p>\n'
     '              <div class="form-group">\n'
     '                <label class="form-label">SMS Message <span class="text-muted text-sm" id="smsCharCount">(0 / 160)</span></label>\n'
-    '                <textarea class="form-textarea" id="smsBroadcastText" rows="3" maxlength="320" placeholder="e.g. Hi {name}, your EuroVest portfolio is growing! Start your 24-hour fast plan today and earn +15% ROI by tomorrow. The gas fee is on us! \u2014 EuroVest" oninput="updateSMSCharCount()"></textarea>\n'
+    '                <textarea class="form-textarea" id="smsBroadcastText" rows="3" maxlength="320" placeholder="e.g. Hi {name}, your EuroFiducia portfolio is growing! Start your 24-hour fast plan today and earn +15% ROI by tomorrow. The gas fee is on us! \u2014 EuroFiducia" oninput="updateSMSCharCount()"></textarea>\n'
     '              </div>\n'
     '              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">\n'
     '                <button class="btn btn-green btn-lg" onclick="broadcastSMS()">\U0001f4f2 Send SMS to All Opted-In Users</button>\n'

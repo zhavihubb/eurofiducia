@@ -1,10 +1,10 @@
-# EuroVest Persistence Backend
+# EuroFiducia Persistence Backend
 
-This is a **zero-dependency** Node.js server (uses only built-in `http` + `fs` modules — no `npm install` needed) that stores **all** EuroVest data in a single `db.json` file on the server.
+This is a **zero-dependency** Node.js server (uses only built-in `http` + `fs` modules — no `npm install` needed) that stores **all** EuroFiducia data in a single `db.json` file on the server.
 
 ## Why it exists
 
-The original EuroVest app stored everything in the browser's `localStorage`. That means:
+The original EuroFiducia app stored everything in the browser's `localStorage`. That means:
 
 - ❌ Data is wiped when the static site is **redeployed** (new build = fresh browser storage)
 - ❌ Data is **per-device / per-browser** — logging in on a new phone loses everything
@@ -26,7 +26,7 @@ If the server is unreachable, the app keeps working on `localStorage` alone (gra
 ```bash
 cd server
 node server.js
-# → EuroVest backend running on port 3000
+# → EuroFiducia backend running on port 3000
 ```
 
 Optional env vars:
@@ -42,8 +42,8 @@ Optional env vars:
 3. Build command: *(leave empty)*
 4. Start command: `node server/server.js`
 5. Add env var `PORT=10000` (Render sets this automatically; the server reads `process.env.PORT`)
-6. Deploy. You get a URL like `https://eurovest-backend.onrender.com`
-7. In the frontend, set `EV.sync.serverURL = 'https://eurovest-backend.onrender.com'` (see below).
+6. Deploy. You get a URL like `https://eurofiducia-backend.onrender.com`
+7. In the frontend, set `EV.sync.serverURL = 'https://eurofiducia-backend.onrender.com'` (see below).
 
 > Render free tier spins down after 15 min of inactivity and wakes on the next request (a few seconds delay). For production, a $7/mo instance stays always-on.
 
@@ -55,7 +55,7 @@ Optional env vars:
 ### Option C — Any VPS (always-on)
 ```bash
 npm install -g pm2
-pm2 start server/server.js --name eurovest
+pm2 start server/server.js --name eurofiducia
 pm2 save
 pm2 startup   # auto-restart on reboot
 ```

@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign In — EuroVest</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<meta name="description" content="Access your EuroFiducia account. Bank-grade encryption, 2FA protection.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EuroFiducia">
+<meta property="og:title" content="Sign In — EuroFiducia">
+<meta property="og:description" content="Access your EuroFiducia account. Bank-grade encryption, 2FA protection.">
+<meta property="og:image" content="assets/images/og-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>Sign In — EuroFiducia</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 <link rel="stylesheet" href="assets/css/extras.css">
@@ -15,9 +24,9 @@
   <div class="auth-side">
     <div class="auth-side-content">
       <div style="display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:40px;">
-        <span style="width:38px;height:38px;border-radius:10px;background:var(--grad-brand);display:flex;align-items:center;justify-content:center;">€</span> EuroVest
+        <span style="width:38px;height:38px;border-radius:10px;background:var(--grad-brand);display:flex;align-items:center;justify-content:center;">€</span> EuroFiducia
       </div>
-      <h2 data-i18n="auth_welcome">Welcome to EuroVest</h2>
+      <h2 data-i18n="auth_welcome">Welcome to EuroFiducia</h2>
       <p data-i18n="auth_welcome_sub">Your trusted European investment platform. Join thousands of investors building diversified portfolios across global markets.</p>
       <div class="flex gap-2" style="flex-wrap:wrap;margin-top:32px;">
         <span class="flag-pill" style="background:rgba(255,255,255,0.1);color:#fff;">🇫🇷 France</span>
@@ -38,7 +47,7 @@
         <a href="index.html" class="btn btn-ghost btn-sm">← Home</a>
       </div>
       <h2>Sign In</h2>
-      <p class="subtitle" data-i18n="auth_welcome">Welcome back to EuroVest</p>
+      <p class="subtitle" data-i18n="auth_welcome">Welcome back to EuroFiducia</p>
 
       <form id="loginForm" onsubmit="return doLogin(event)">
         <div class="form-group">
@@ -64,9 +73,7 @@
         <span data-i18n="auth_no_account">Don't have an account?</span>
         <a href="register.html" data-i18n="nav_register" style="font-weight:600;">Create Account</a>
       </p>
-      <p class="text-center mt-4">
-        <a href="admin/login.html" style="font-size:0.85rem;">🔐 Admin Portal</a>
-      </p>
+      <!-- admin access intentionally unlisted -->
     </div>
   </div>
 </div>

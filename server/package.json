@@ -1,7 +1,7 @@
 {
-  "name": "eurovest-backend",
+  "name": "eurofiducia-backend",
   "version": "1.0.0",
-  "description": "EuroVest Investment Platform — Persistence & Sync Backend. Keeps all user/account data on the server so nothing is lost on redeploy or device change.",
+  "description": "EuroFiducia Investment Platform — Persistence & Sync Backend. Keeps all user/account data on the server so nothing is lost on redeploy or device change.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

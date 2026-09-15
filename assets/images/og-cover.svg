@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1e3a"/>
+      <stop offset="1" stop-color="#0f2a52"/>
+    </linearGradient>
+    <linearGradient id="gt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5CC88F"/>
+      <stop offset="1" stop-color="#3da674"/>
+    </linearGradient>
+    <linearGradient id="ch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4FA8E8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#4FA8E8" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="80" r="220" fill="#4FA8E8" opacity="0.08"/>
+  <circle cx="120" cy="560" r="180" fill="#5CC88F" opacity="0.07"/>
+  <g opacity="0.25">
+    <path d="M760 630 L760 430 L800 430 L800 630 Z" fill="url(#ch)"/>
+    <path d="M840 630 L840 360 L880 360 L880 630 Z" fill="url(#ch)"/>
+    <path d="M920 630 L920 470 L960 470 L960 630 Z" fill="url(#ch)"/>
+    <path d="M1000 630 L1000 300 L1040 300 L1040 630 Z" fill="url(#ch)"/>
+    <path d="M1080 630 L1080 390 L1120 390 L1120 630 Z" fill="url(#ch)"/>
+  </g>
+  <g transform="translate(90,105)">
+    <path d="M32 4 L54 12 L54 30 C54 44 44 54 32 60 C20 54 10 44 10 30 L10 12 Z" fill="url(#gt)" transform="scale(1.6) translate(-14,-8)"/>
+    <text x="46" y="47" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#ffffff">EuroFiducia</text>
+  </g>
+  <text x="90" y="290" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff">Trusted European Investing</text>
+  <text x="90" y="370" font-family="Georgia, serif" font-size="64" font-weight="700" fill="url(#gt)">Built on Fiducia — Trust</text>
+  <text x="90" y="440" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="rgba(255,255,255,0.75)">🇫🇷 France · 🇮🇹 Italy · 🇪🇺 Europe · 🌐 Global — 12 asset classes, transparent fees</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.9)">
+    <rect x="90" y="490" width="290" height="52" rx="26" fill="rgba(92,200,143,0.15)" stroke="#5CC88F" stroke-opacity="0.5"/>
+    <text x="120" y="524">🔒 Segregated Accounts</text>
+    <rect x="410" y="490" width="300" height="52" rx="26" fill="rgba(79,168,232,0.12)" stroke="#4FA8E8" stroke-opacity="0.5"/>
+    <text x="440" y="524">🇪🇺 MiFID II Standards</text>
+  </g>
+</svg>

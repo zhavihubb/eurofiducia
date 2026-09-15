@@ -1,4 +1,4 @@
-/* EUROVEST — Multi-language Translation Engine
+/* EUROFIDUCIA — Multi-language Translation Engine
    Languages: EN, FR, IT, ES, DE, PT, AR, ZH, RU, HI
    Admin always sees English. Users see their selected native language.
 */
@@ -47,7 +47,7 @@ const I18N = {
     reg_eu_d:'Diversified European ETFs across sectors',reg_global_d:'Global equities, ETFs & alternatives',
     sec_region_eyebrow:'Regional Portfolios',sec_region_title:'Choose Your Strategy',sec_region_sub:'Model portfolios tailored to your risk profile and region.',
     // Auth
-    auth_welcome:'Welcome to EuroVest',auth_welcome_sub:'Your trusted European investment platform. Join thousands of investors building diversified portfolios across global markets.',
+    auth_welcome:'Welcome to EuroFiducia',auth_welcome_sub:'Your trusted European investment platform. Join thousands of investors building diversified portfolios across global markets.',
     auth_have_account:'Already have an account?',auth_no_account:"Don't have an account?",
     // Register
     reg_title:'Create Your Account',reg_sub:'Start investing in minutes',reg_step1:'Account',reg_step2:'Identity',reg_step3:'Profile',reg_step4:'Compliance',
@@ -66,7 +66,7 @@ const I18N = {
     // Footer
     footer_company:'Company',footer_legal:'Legal',footer_support:'Support',footer_disclaimer:'Capital at risk. The value of investments can go down as well as up. Past performance is not indicative of future results. This platform is for demonstration purposes.',
     // Support
-    support_title:'Customer Support',support_online:'Online — AI Assistant',support_greeting:'Hello! Welcome to EuroVest Support. How can I help you today?',
+    support_title:'Customer Support',support_online:'Online — AI Assistant',support_greeting:'Hello! Welcome to EuroFiducia Support. How can I help you today?',
     support_q1:'How do I deposit funds?',support_q2:'How do I withdraw?',support_q3:'What investments are available?',support_q4:'How do I reset my password?',
     support_escalating:'I am connecting you with a human agent. Please hold on a moment.',
     // Misc
@@ -97,7 +97,7 @@ const I18N = {
     reg_fr_d:'Actions européennes, obligations et produits éligibles PEA',reg_it_d:'BTP, actions italiennes et investissements PIR',
     reg_eu_d:'ETF européens diversifiés par secteur',reg_global_d:'Actions mondiales, ETF et alternatives',
     sec_region_eyebrow:'Portefeuilles régionaux',sec_region_title:'Choisissez votre stratégie',sec_region_sub:'Portefeuilles modèles adaptés à votre profil de risque et votre région.',
-    auth_welcome:'Bienvenue sur EuroVest',auth_welcome_sub:'Votre plateforme d\'investissement européenne de confiance. Rejoignez des milliers d\'investisseurs.',
+    auth_welcome:'Bienvenue sur EuroFiducia',auth_welcome_sub:'Votre plateforme d\'investissement européenne de confiance. Rejoignez des milliers d\'investisseurs.',
     auth_have_account:'Vous avez déjà un compte ?',auth_no_account:'Pas encore de compte ?',
     reg_title:'Créez votre compte',reg_sub:'Commencez à investir en quelques minutes',reg_step1:'Compte',reg_step2:'Identité',reg_step3:'Profil',reg_step4:'Conformité',
     lbl_firstname:'Prénom',lbl_lastname:'Nom',lbl_email:'Adresse e-mail',lbl_phone:'Téléphone',lbl_password:'Mot de passe',lbl_country:'Pays de résidence',lbl_confirm_password:'Confirmer le mot de passe',
@@ -107,7 +107,7 @@ const I18N = {
     wd_title:'Retirer des fonds',wd_available:'Disponible à retirer',wd_amount:'Montant',wd_bank:'Compte bancaire',wd_confirm:'Demander un retrait',
     admin_overview:'Tableau de bord',admin_users:'Utilisateurs',admin_transactions:'Transactions',admin_generate:'Générer des transactions',admin_messages:'Messagerie',admin_support:'Assistance',admin_compliance:'Conformité',admin_reports:'Rapports',admin_products:'Investissements',admin_settings:'Paramètres',
     footer_company:'Société',footer_legal:'Légal',footer_support:'Assistance',footer_disclaimer:'Risque en capital. La valeur des investissements peut baisser comme monter. Plateforme de démonstration.',
-    support_title:'Assistance client',support_online:'En ligne — Assistant IA',support_greeting:'Bonjour ! Bienvenue sur l\'assistance EuroVest. Comment puis-je vous aider ?',
+    support_title:'Assistance client',support_online:'En ligne — Assistant IA',support_greeting:'Bonjour ! Bienvenue sur l\'assistance EuroFiducia. Comment puis-je vous aider ?',
     support_q1:'Comment déposer des fonds ?',support_q2:'Comment retirer ?',support_q3:'Quels investissements sont disponibles ?',support_q4:'Comment réinitialiser mon mot de passe ?',
     support_escalating:'Je vous mets en relation avec un conseiller. Veuillez patienter.',
     btn_continue:'Continuer',btn_back:'Retour',btn_submit:'Soumettre',btn_cancel:'Annuler',btn_save:'Enregistrer',btn_send:'Envoyer',btn_close:'Fermer',btn_view:'Voir',btn_download:'Télécharger',
@@ -137,7 +137,7 @@ const I18N = {
     reg_fr_d:'Azioni europee, obbligazioni e prodotti PEA',reg_it_d:'BTP, azioni italiane e investimenti PIR',
     reg_eu_d:'ETF europei diversificati per settore',reg_global_d:'Azioni globali, ETF e alternative',
     sec_region_eyebrow:'Portafogli regionali',sec_region_title:'Scegli la tua strategia',sec_region_sub:'Portafogli modello adatti al tuo profilo di rischio e regione.',
-    auth_welcome:'Benvenuto su EuroVest',auth_welcome_sub:'La tua piattaforma europea di investimento. Unisciti a migliaia di investitori.',
+    auth_welcome:'Benvenuto su EuroFiducia',auth_welcome_sub:'La tua piattaforma europea di investimento. Unisciti a migliaia di investitori.',
     auth_have_account:'Hai già un account?',auth_no_account:'Non hai un account?',
     reg_title:'Crea il tuo account',reg_sub:'Inizia a investire in pochi minuti',reg_step1:'Account',reg_step2:'Identità',reg_step3:'Profilo',reg_step4:'Conformità',
     lbl_firstname:'Nome',lbl_lastname:'Cognome',lbl_email:'Email',lbl_phone:'Telefono',lbl_password:'Password',lbl_country:'Paese di residenza',lbl_confirm_password:'Conferma password',
@@ -147,7 +147,7 @@ const I18N = {
     wd_title:'Preleva fondi',wd_available:'Disponibile al prelievo',wd_amount:'Importo',wd_bank:'Conto bancario',wd_confirm:'Richiedi prelievo',
     admin_overview:'Dashboard',admin_users:'Utenti',admin_transactions:'Transazioni',admin_generate:'Genera transazioni',admin_messages:'Messaggistica',admin_support:'Assistenza',admin_compliance:'Conformità',admin_reports:'Report',admin_products:'Investimenti',admin_settings:'Impostazioni',
     footer_company:'Società',footer_legal:'Legale',footer_support:'Assistenza',footer_disclaimer:'Capitale a rischio. Il valore degli investimenti può scendere o salire. Piattaforma dimostrativa.',
-    support_title:'Assistenza clienti',support_online:'Online — Assistente IA',support_greeting:'Ciao! Benvenuto sull\'assistenza EuroVest. Come posso aiutarti?',
+    support_title:'Assistenza clienti',support_online:'Online — Assistente IA',support_greeting:'Ciao! Benvenuto sull\'assistenza EuroFiducia. Come posso aiutarti?',
     support_q1:'Come deposito fondi?',support_q2:'Come prelevo?',support_q3:'Quali investimenti sono disponibili?',support_q4:'Come reimposto la password?',
     support_escalating:'Ti sto mettendo in contatto con un operatore. Attendi.',
     btn_continue:'Continua',btn_back:'Indietro',btn_submit:'Invia',btn_cancel:'Annulla',btn_save:'Salva',btn_send:'Invia',btn_close:'Chiudi',btn_view:'Vedi',btn_download:'Scarica',
@@ -176,7 +176,7 @@ const I18N = {
     reg_fr:'Cartera Francia',reg_it:'Cartera Italia',reg_eu:'Crecimiento Euro',reg_global:'Crecimiento Global',
     reg_fr_d:'Acciones europeas, bonos y productos PEA',reg_it_d:'BTP, acciones italianas e inversiones PIR',reg_eu_d:'ETF europeos diversificados',reg_global_d:'Acciones globales, ETF y alternativas',
     sec_region_eyebrow:'Carteras regionales',sec_region_title:'Elige tu estrategia',sec_region_sub:'Carteras modelo adaptadas a tu perfil de riesgo.',
-    auth_welcome:'Bienvenido a EuroVest',auth_welcome_sub:'Tu plataforma europea de inversión de confianza.',
+    auth_welcome:'Bienvenido a EuroFiducia',auth_welcome_sub:'Tu plataforma europea de inversión de confianza.',
     auth_have_account:'¿Ya tienes cuenta?',auth_no_account:'¿No tienes cuenta?',
     reg_title:'Crea tu cuenta',reg_sub:'Empieza a invertir en minutos',reg_step1:'Cuenta',reg_step2:'Identidad',reg_step3:'Perfil',reg_step4:'Cumplimiento',
     lbl_firstname:'Nombre',lbl_lastname:'Apellido',lbl_email:'Email',lbl_phone:'Teléfono',lbl_password:'Contraseña',lbl_country:'País de residencia',lbl_confirm_password:'Confirmar contraseña',
@@ -186,7 +186,7 @@ const I18N = {
     wd_title:'Retirar fondos',wd_available:'Disponible para retirar',wd_amount:'Importe',wd_bank:'Cuenta bancaria',wd_confirm:'Solicitar retiro',
     admin_overview:'Panel',admin_users:'Usuarios',admin_transactions:'Transacciones',admin_generate:'Generar transacciones',admin_messages:'Mensajería',admin_support:'Soporte',admin_compliance:'Cumplimiento',admin_reports:'Informes',admin_products:'Inversiones',admin_settings:'Ajustes',
     footer_company:'Empresa',footer_legal:'Legal',footer_support:'Soporte',footer_disclaimer:'Capital en riesgo. Plataforma de demostración.',
-    support_title:'Soporte al cliente',support_online:'En línea — Asistente IA',support_greeting:'¡Hola! Bienvenido al soporte EuroVest. ¿Cómo puedo ayudarte?',
+    support_title:'Soporte al cliente',support_online:'En línea — Asistente IA',support_greeting:'¡Hola! Bienvenido al soporte EuroFiducia. ¿Cómo puedo ayudarte?',
     support_q1:'¿Cómo deposito fondos?',support_q2:'¿Cómo retiro?',support_q3:'¿Qué inversiones hay?',support_q4:'¿Cómo restablezco mi contraseña?',
     support_escalating:'Te estoy conectando con un agente. Espera un momento.',
     btn_continue:'Continuar',btn_back:'Atrás',btn_submit:'Enviar',btn_cancel:'Cancelar',btn_save:'Guardar',btn_send:'Enviar',btn_close:'Cerrar',btn_view:'Ver',btn_download:'Descargar',
@@ -215,7 +215,7 @@ const I18N = {
     reg_fr:'Portfolio Frankreich',reg_it:'Portfolio Italien',reg_eu:'Euro Wachstum',reg_global:'Global Wachstum',
     reg_fr_d:'Europäische Aktien, Anleihen und PEA-Produkte',reg_it_d:'BTP, italienische Aktien und PIR',reg_eu_d:'Diversifizierte europäische ETFs',reg_global_d:'Globale Aktien, ETFs und Alternativen',
     sec_region_eyebrow:'Regionale Portfolios',sec_region_title:'Wählen Sie Ihre Strategie',sec_region_sub:'Modellportfolios für Ihr Risikoprofil.',
-    auth_welcome:'Willkommen bei EuroVest',auth_welcome_sub:'Ihre vertrauenswürdige europäische Anlageplattform.',
+    auth_welcome:'Willkommen bei EuroFiducia',auth_welcome_sub:'Ihre vertrauenswürdige europäische Anlageplattform.',
     auth_have_account:'Schon ein Konto?',auth_no_account:'Noch kein Konto?',
     reg_title:'Konto erstellen',reg_sub:'In Minuten investieren',reg_step1:'Konto',reg_step2:'Identität',reg_step3:'Profil',reg_step4:'Compliance',
     lbl_firstname:'Vorname',lbl_lastname:'Nachname',lbl_email:'E-Mail',lbl_phone:'Telefon',lbl_password:'Passwort',lbl_country:'Wohnsitzland',lbl_confirm_password:'Passwort bestätigen',
@@ -225,7 +225,7 @@ const I18N = {
     wd_title:'Gelder auszahlen',wd_available:'Verfügbar zum Auszahlen',wd_amount:'Betrag',wd_bank:'Bankkonto',wd_confirm:'Auszahlung anfordern',
     admin_overview:'Dashboard',admin_users:'Nutzer',admin_transactions:'Transaktionen',admin_generate:'Transaktionen generieren',admin_messages:'Nachrichten',admin_support:'Support',admin_compliance:'Compliance',admin_reports:'Berichte',admin_products:'Anlagen',admin_settings:'Einstellungen',
     footer_company:'Unternehmen',footer_legal:'Rechtliches',footer_support:'Support',footer_disclaimer:'Kapitalriskiko. Demo-Plattform.',
-    support_title:'Kundenservice',support_online:'Online — KI-Assistent',support_greeting:'Hallo! Willkommen beim EuroVest Support. Wie kann ich helfen?',
+    support_title:'Kundenservice',support_online:'Online — KI-Assistent',support_greeting:'Hallo! Willkommen beim EuroFiducia Support. Wie kann ich helfen?',
     support_q1:'Wie zahle ich ein?',support_q2:'Wie zahle ich aus?',support_q3:'Welche Anlagen gibt es?',support_q4:'Wie setze ich mein Passwort zurück?',
     support_escalating:'Ich verbinde Sie mit einem Mitarbeiter. Bitte warten.',
     btn_continue:'Weiter',btn_back:'Zurück',btn_submit:'Absenden',btn_cancel:'Abbrechen',btn_save:'Speichern',btn_send:'Senden',btn_close:'Schließen',btn_view:'Ansehen',btn_download:'Herunterladen',

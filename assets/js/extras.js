@@ -1,4 +1,4 @@
-/* ===== EuroVest Extras — Market Ticker + Cookie Consent ===== */
+/* ===== EuroFiducia Extras — Market Ticker + Cookie Consent ===== */
 (function() {
   'use strict';
 
@@ -101,3 +101,37 @@
     init();
   }
 })();
+
+/* ===== FAQ ACCORDION (global) ===== */
+window.toggleFaq = function(btn) {
+  var item = btn.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
+};
+
+/* ===== COUNT-UP STATS ===== */
+function initCountUp() {
+  var els = document.querySelectorAll('.count-up');
+  if (!els.length) return;
+  var animate = function(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var dur = 1400, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  };
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { animate(e.target); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.4 });
+  els.forEach(function(el) { observer.observe(el); });
+}
+document.addEventListener('DOMContentLoaded', initCountUp);
+if (document.readyState === 'interactive' || document.readyState === 'complete') initCountUp();

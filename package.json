@@ -1,7 +1,7 @@
 {
-  "name": "eurovest-investment",
+  "name": "eurofiducia",
   "version": "1.0.0",
-  "description": "EuroVest Investment Platform — European investment platform with country-specific deposits, investment plans, rules & regulations, and admin broadcasting",
+  "description": "EuroFiducia Investment Platform — European investment platform with country-specific deposits, investment plans, rules & regulations, and admin broadcasting",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js"

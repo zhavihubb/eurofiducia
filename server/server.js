@@ -1,8 +1,8 @@
 /**
- * EuroVest Persistence Backend
+ * EuroFiducia Persistence Backend
  * ============================
  * A zero-dependency Node.js server (uses only built-in http + fs modules).
- * It stores ALL EuroVest data (users, sessions, transactions, emails, settings,
+ * It stores ALL EuroFiducia data (users, sessions, transactions, emails, settings,
  * crypto wallets, notifications, etc.) in a single JSON file on the server.
  *
  * This means:
@@ -31,7 +31,7 @@
  *   - Render.com: create a new "Web Service", point at this folder, build command
  *     empty, start command "node server.js". The db.json persists on the disk.
  *   - Railway.app: similar, "node server.js".
- *   - Any VPS / always-on machine: run with pm2 ("pm2 start server.js --name eurovest")
+ *   - Any VPS / always-on machine: run with pm2 ("pm2 start server.js --name eurofiducia")
  *     so it restarts on reboot.
  */
 
@@ -42,13 +42,13 @@ const https = require('https'); // for Resend API (zero new dependencies)
 
 const PORT = process.env.PORT || 3000;
 const DB_FILE = path.join(__dirname, 'db.json');
-const FRONTEND_DIR = path.resolve(__dirname, '..'); // eurovest/ root holds the static site
+const FRONTEND_DIR = path.resolve(__dirname, '..'); // eurofiducia/ root holds the static site
 
 // ---------- Email configuration (Resend API) ----------
 // Set these as Railway environment variables to enable REAL email sending.
 // Without them, emails are simulated (stored in db.json only).
 const RESEND_API_KEY = process.env.RESEND_API_KEY || '';
-const EMAIL_FROM = process.env.EMAIL_FROM || 'EuroVest <noreply@eurovest.eu>';
+const EMAIL_FROM = process.env.EMAIL_FROM || 'EuroFiducia <noreply@eurofiducia.eu>';
 const RESEND_API_HOST = 'api.resend.com';
 
 /**
@@ -118,7 +118,7 @@ function loadDB() {
         __meta: {
           created: new Date().toISOString(),
           version: 1,
-          note: 'EuroVest persistence store. All ev_* keys from the frontend are mirrored here.'
+          note: 'EuroFiducia persistence store. All ev_* keys from the frontend are mirrored here.'
         }
       };
       fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2));
@@ -359,7 +359,7 @@ const server = http.createServer(async function (req, res) {
   if (p === '/api/wipe' && req.method === 'POST') {
     // Danger zone — reset the DB (admin only in practice; protected by a token query)
     const token = url.searchParams.get('token');
-    if (token !== process.env.ADMIN_TOKEN && token !== 'eurovest-reset') {
+    if (token !== process.env.ADMIN_TOKEN && token !== 'eurofiducia-reset') {
       sendJSON(res, 403, { error: 'forbidden' }); return;
     }
     saveDB({ __meta: { created: new Date().toISOString(), version: 1, wiped: true } });
@@ -377,7 +377,7 @@ const server = http.createServer(async function (req, res) {
 });
 
 server.listen(PORT, function () {
-  console.log('EuroVest backend running on port ' + PORT);
+  console.log('EuroFiducia backend running on port ' + PORT);
   console.log('  API:    http://localhost:' + PORT + '/api/health');
   console.log('  Pull:   http://localhost:' + PORT + '/api/pull');
   console.log('  Static: http://localhost:' + PORT + '/');

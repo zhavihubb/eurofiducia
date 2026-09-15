@@ -1,8 +1,8 @@
-# EuroVest Website Audit & Assessment
+# EuroFiducia Website Audit & Assessment
 
 ## Overall Verdict
 
-EuroVest is a **well-structured, visually polished investment platform demo** that covers an impressively broad range of financial services. The design system is professional, the multilingual support (10 languages) is genuinely functional, and the user/admin flows are complete end-to-end. However, as a *presentation* of a real financial platform, there are several areas where careful attention to consistency and "real-world plausibility" would significantly boost credibility.
+EuroFiducia is a **well-structured, visually polished investment platform demo** that covers an impressively broad range of financial services. The design system is professional, the multilingual support (10 languages) is genuinely functional, and the user/admin flows are complete end-to-end. However, as a *presentation* of a real financial platform, there are several areas where careful attention to consistency and "real-world plausibility" would significantly boost credibility.
 
 **Rating: 7.5 / 10** — Strong foundation, needs polish in the details that financial-savvy visitors would notice.
 
@@ -72,7 +72,7 @@ Personal, Mortgage, Auto, Business, Student, Debt Consolidation, Home Equity, Br
 ### High Priority (Biggest Credibility Boost)
 
 **1. Add a regulatory license / authorization footer banner**
-Real European investment platforms show something like: *"EuroVest SAS is registered with the AMF (Autorité des marchés financiers) under number ORIAS N°XXXXX. Licensed as a Investment Services Provider (ISP). Crypto services licensed under PSAN (Prestataire de Services sur Actifs Numériques) registration."* Adding this to the footer of every page would immediately make the platform look more legitimate.
+Real European investment platforms show something like: *"EuroFiducia SAS is registered with the AMF (Autorité des marchés financiers) under number ORIAS N°XXXXX. Licensed as a Investment Services Provider (ISP). Crypto services licensed under PSAN (Prestataire de Services sur Actifs Numériques) registration."* Adding this to the footer of every page would immediately make the platform look more legitimate.
 
 **2. Add a "Security & Protection" section** explaining client fund segregation, investor protection (e.g., "Your investments are held in segregated accounts with our custodian bank. Eligible deposits protected up to €100,000 under the French FGDR scheme"). This is standard on real European platforms and its absence is noticeable.
 
@@ -84,7 +84,7 @@ Real European investment platforms show something like: *"EuroVest SAS is regist
 
 **5. Add performance charts to portfolios.** The portfolios page shows allocations and target returns but no visual performance history. Even a simple SVG line chart showing "past 12 months" performance would make it feel more real.
 
-**6. Add testimonials / reviews section** on the homepage or about page. "Marie L., Lyon: 'I've been investing with EuroVest for 2 years...'" — 3-4 testimonials with star ratings would add social proof.
+**6. Add testimonials / reviews section** on the homepage or about page. "Marie L., Lyon: 'I've been investing with EuroFiducia for 2 years...'" — 3-4 testimonials with star ratings would add social proof.
 
 **7. Add a FAQ section to the homepage** answering common questions: "Is my money safe?", "What are the fees?", "How long does withdrawal take?", "Can I invest from outside France/Italy?"
 

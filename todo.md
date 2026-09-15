@@ -1,9 +1,9 @@
-# EuroVest Feature Enhancement TODO
+# EuroFiducia Feature Enhancement TODO
 
 ## Current Session Tasks
 
 ### Task 1: Remove admin login details from login page
-- [x] Remove the "Demo Login" section from login.html that shows admin credentials (admin@eurovest.eu / admin123)
+- [x] Remove the "Demo Login" section from login.html that shows admin credentials (admin@eurofiducia.eu / admin123)
 
 ### Task 2: $200 sign-up bonus after account approval
 - [x] Generate referral codes (genReferralCode utility added)

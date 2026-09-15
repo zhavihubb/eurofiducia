@@ -1,8 +1,8 @@
-# 🔐 EuroVest — Data Persistence Setup Guide
+# 🔐 EuroFiducia — Data Persistence Setup Guide
 
 ## The Problem This Solves
 
-By default, EuroVest stores all user accounts, transactions, and settings in the browser's `localStorage`. This means:
+By default, EuroFiducia stores all user accounts, transactions, and settings in the browser's `localStorage`. This means:
 
 - ❌ **Data is lost when you redeploy** the site (new deploy = new origin/cache)
 - ❌ **Users can't access their account from a different device** (localStorage is per-browser)
@@ -10,7 +10,7 @@ By default, EuroVest stores all user accounts, transactions, and settings in the
 
 ## The Solution
 
-EuroVest now includes an optional **zero-dependency Node.js backend** that acts as a durable, cross-device data store. When configured:
+EuroFiducia now includes an optional **zero-dependency Node.js backend** that acts as a durable, cross-device data store. When configured:
 
 - ✅ All user data syncs to a server-side JSON database (`db.json`)
 - ✅ Data survives redeployment — nothing is lost
@@ -31,7 +31,7 @@ node server.js
 
 You'll see:
 ```
-EuroVest backend running on port 3000
+EuroFiducia backend running on port 3000
   API:    http://localhost:3000/api/health
   Pull:   http://localhost:3000/api/pull
   Static: http://localhost:3000/
@@ -60,7 +60,7 @@ Every user registration, approval, transaction, and wallet change now persists t
 ### Architecture
 
 ```
-Browser (localStorage)  ←→  EuroVest Backend (db.json)
+Browser (localStorage)  ←→  EuroFiducia Backend (db.json)
      Fast cache                    Source of truth
 ```
 
@@ -79,7 +79,7 @@ Browser (localStorage)  ←→  EuroVest Backend (db.json)
 | `GET` | `/api/key/:key` | Get a single key's value |
 | `PUT` | `/api/key/:key` | Set a single key's value |
 | `POST` | `/api/sync` | Bulk merge `{ dump: { key: value } }` — arrays merged by id |
-| `POST` | `/api/wipe?token=eurovest-reset` | ⚠️ Reset the database (protected by token) |
+| `POST` | `/api/wipe?token=eurofiducia-reset` | ⚠️ Reset the database (protected by token) |
 
 ---
 
@@ -89,14 +89,14 @@ Browser (localStorage)  ←→  EuroVest Backend (db.json)
 
 1. Create an account at [render.com](https://render.com)
 2. Click **New +** → **Web Service**
-3. Connect your GitHub repo (or use the EuroVest repo)
+3. Connect your GitHub repo (or use the EuroFiducia repo)
 4. Settings:
    - **Root Directory:** `server`
    - **Build Command:** *(leave empty)*
    - **Start Command:** `node server.js`
    - **Plan:** Free
 5. Click **Create Web Service**
-6. Once deployed, copy the URL (e.g., `https://eurovest-backend.onrender.com`)
+6. Once deployed, copy the URL (e.g., `https://eurofiducia-backend.onrender.com`)
 7. Enter this URL in the admin dashboard → Settings → Backend Server URL
 
 > **Note:** Render's free tier sleeps after 15 minutes of inactivity. The first request after sleep takes ~30 seconds to wake up. This is fine — the app degrades gracefully and resyncs once the server wakes.
@@ -113,9 +113,9 @@ Browser (localStorage)  ←→  EuroVest Backend (db.json)
 
 ```bash
 # On your server
-cd /path/to/eurovest/server
+cd /path/to/eurofiducia/server
 npm install -g pm2
-pm2 start server.js --name eurovest
+pm2 start server.js --name eurofiducia
 pm2 save
 pm2 startup  # enables auto-start on reboot
 
@@ -129,7 +129,7 @@ pm2 startup  # enables auto-start on reboot
 
 - The `db.json` file is the durable source of truth. **Back it up regularly.**
 - On Render/Railway, the filesystem is ephemeral on free tiers — data may reset on redeploy. For production, attach a persistent disk (Render: Settings → Disks) or use a VPS.
-- To reset the database: `POST /api/wipe?token=eurovest-reset` (change this token by setting the `ADMIN_TOKEN` environment variable).
+- To reset the database: `POST /api/wipe?token=eurofiducia-reset` (change this token by setting the `ADMIN_TOKEN` environment variable).
 - The wipe endpoint is protected — only someone with the token can reset data.
 
 ---
@@ -170,4 +170,4 @@ Everything stored with the `ev_` prefix in localStorage:
 
 ## Without a Backend (Local-Only Mode)
 
-If you don't configure a backend URL, EuroVest works exactly as before — all data stays in localStorage. This is fine for development/testing but doesn't provide cross-device persistence. To enable persistence, simply set up the backend and enter the URL in admin settings.
+If you don't configure a backend URL, EuroFiducia works exactly as before — all data stays in localStorage. This is fine for development/testing but doesn't provide cross-device persistence. To enable persistence, simply set up the backend and enter the URL in admin settings.

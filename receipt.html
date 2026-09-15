@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transaction Receipt — EuroVest</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<meta name="description" content="Transaction receipt from EuroFiducia.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EuroFiducia">
+<meta property="og:title" content="Receipt — EuroFiducia">
+<meta property="og:description" content="Transaction receipt from EuroFiducia.">
+<meta property="og:image" content="assets/images/og-cover.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>Transaction Receipt — EuroFiducia</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
   body { background: var(--bg); padding: 20px 0; }
@@ -18,7 +27,7 @@
 
 <nav class="navbar" style="margin-bottom:20px;">
   <div class="container navbar-inner">
-    <a href="index.html" class="navbar-logo"><span class="logo-mark">€</span> EuroVest</a>
+    <a href="index.html" class="navbar-logo"><span class="logo-mark">€</span> EuroFiducia</a>
     <div class="navbar-actions">
       <a href="user/dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a>
     </div>
@@ -33,7 +42,7 @@
 
 <div class="receipt-page" id="receiptContainer">
   <div class="receipt-head">
-    <div class="receipt-logo">EUROVEST</div>
+    <div class="receipt-logo">EUROFIDUCIA</div>
     <div class="receipt-title">Official Transaction Receipt</div>
   </div>
   <div class="receipt-body" id="receiptBody">
@@ -97,7 +106,7 @@ function loadReceipt() {
   html += '<div class="divider"></div>';
   html += '<h4 style="margin-bottom:16px;">Account Details</h4>';
   html += '<div class="receipt-row"><span class="label">Account Holder</span><span class="value">'+r.accountHolder+'</span></div>';
-  html += '<div class="receipt-row"><span class="label">EuroVest Account Number</span><span class="value font-bold" style="font-family:monospace;">'+r.accountNumber+'</span></div>';
+  html += '<div class="receipt-row"><span class="label">EuroFiducia Account Number</span><span class="value font-bold" style="font-family:monospace;">'+r.accountNumber+'</span></div>';
   if (r.memberId) html += '<div class="receipt-row"><span class="label">Client / Member ID</span><span class="value" style="font-family:monospace;">'+r.memberId+'</span></div>';
   html += '<div class="receipt-row"><span class="label">IBAN</span><span class="value text-sm">'+r.iban+'</span></div>';
   html += '<div class="receipt-row"><span class="label">BIC/SWIFT</span><span class="value">'+r.bic+'</span></div>';

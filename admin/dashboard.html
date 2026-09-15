@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard — EuroVest</title>
+<title>Admin Dashboard — EuroFiducia</title>
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
   .notif-item { display:flex; align-items:flex-start; gap:12px; padding:14px 16px; border-bottom:1px solid var(--border); cursor:pointer; transition:var(--transition); }
@@ -54,7 +54,7 @@
   <!-- Sidebar -->
   <aside class="dash-sidebar">
     <div class="dash-sidebar-head">
-      <div class="logo"><span class="logo-mark">€</span> EuroVest <span style="font-size:0.7rem;background:var(--brand-green);padding:2px 8px;border-radius:10px;margin-left:4px;">ADMIN</span></div>
+      <div class="logo"><span class="logo-mark">€</span> EuroFiducia <span style="font-size:0.7rem;background:var(--brand-green);padding:2px 8px;border-radius:10px;margin-left:4px;">ADMIN</span></div>
     </div>
     <nav class="dash-nav">
       <div class="dash-nav-section">Dashboard</div>
@@ -96,7 +96,7 @@
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="text-align:right;">
             <div style="font-weight:600;font-size:0.9rem;">Administrator</div>
-            <div style="font-size:0.78rem;color:var(--text-secondary);">admin@eurovest.eu</div>
+            <div style="font-size:0.78rem;color:var(--text-secondary);">admin@eurofiducia.eu</div>
           </div>
           <div style="width:40px;height:40px;border-radius:50%;background:var(--grad-navy);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">A</div>
         </div>
@@ -297,7 +297,7 @@
       <div id="apage-templates" class="dash-page hidden">
         <div class="card mb-6">
           <h3>📧 Motivational Email Templates</h3>
-          <p class="text-muted text-sm mt-2">Select from pre-built motivational templates, preview, personalize, and send to single, multiple, or all users. Each recipient gets a personalized copy (with their name) delivered to their email AND dashboard in the official EuroVest template. SMS notification is sent if the user opted in.</p>
+          <p class="text-muted text-sm mt-2">Select from pre-built motivational templates, preview, personalize, and send to single, multiple, or all users. Each recipient gets a personalized copy (with their name) delivered to their email AND dashboard in the official EuroFiducia template. SMS notification is sent if the user opted in.</p>
         </div>
 
         <div class="grid-2 gap-6">
@@ -349,7 +349,7 @@
               <p class="text-muted text-sm" style="margin-bottom:16px;">Send a short motivational SMS to all users who opted in to SMS notifications. SMS is delivered to their registered phone number. Use <code>{name}</code> for personalization (keep under 160 characters).</p>
               <div class="form-group">
                 <label class="form-label">SMS Message <span class="text-muted text-sm" id="smsCharCount">(0 / 160)</span></label>
-                <textarea class="form-textarea" id="smsBroadcastText" rows="3" maxlength="320" placeholder="e.g. Hi {name}, your EuroVest portfolio is growing! Start your 24-hour fast plan today and earn +15% ROI by tomorrow. The gas fee is on us! — EuroVest" oninput="updateSMSCharCount()"></textarea>
+                <textarea class="form-textarea" id="smsBroadcastText" rows="3" maxlength="320" placeholder="e.g. Hi {name}, your EuroFiducia portfolio is growing! Start your 24-hour fast plan today and earn +15% ROI by tomorrow. The gas fee is on us! — EuroFiducia" oninput="updateSMSCharCount()"></textarea>
               </div>
               <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
                 <button class="btn btn-green btn-lg" onclick="broadcastSMS()">📲 Send SMS to All Opted-In Users</button>
@@ -477,7 +477,7 @@
       <div id="apage-loans" class="dash-page hidden">
         <div class="card mb-6">
           <h3>💰 Loan Management</h3>
-          <p class="text-muted text-sm mt-2">EuroVest offers a full suite of loan products for users in France, Italy, and across Europe. View all loan types, manage active loans, and generate loan transactions.</p>
+          <p class="text-muted text-sm mt-2">EuroFiducia offers a full suite of loan products for users in France, Italy, and across Europe. View all loan types, manage active loans, and generate loan transactions.</p>
         </div>
         <div class="stat-grid">
           <div class="stat-card"><div class="stat-icon" style="background:var(--info-light);color:var(--brand-blue);">📋</div><div class="stat-label">Loan Types Offered</div><div class="stat-value" id="lTypes">12</div></div>
@@ -625,10 +625,10 @@
           <label style="display:flex;align-items:center;gap:10px;cursor:pointer;"><span class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></span> Enable SMS notifications for all opted-in users</label>
           <div class="divider"></div>
           <h4 style="margin-bottom:4px;">🔒 Data Persistence — Backend Server URL</h4>
-          <p class="text-muted text-sm" style="margin-bottom:16px;">Enter the URL of your EuroVest backend server (e.g. <code>https://your-app.onrender.com</code>). When set, all user accounts, transactions, and wallet data are synced to this server so <strong>nothing is lost on redeployment or device change</strong>. Leave empty to use local-only mode (data stays in this browser only).</p>
+          <p class="text-muted text-sm" style="margin-bottom:16px;">Enter the URL of your EuroFiducia backend server (e.g. <code>https://your-app.onrender.com</code>). When set, all user accounts, transactions, and wallet data are synced to this server so <strong>nothing is lost on redeployment or device change</strong>. Leave empty to use local-only mode (data stays in this browser only).</p>
           <div class="form-group">
             <label class="form-label">Backend Server URL</label>
-            <input type="text" class="form-input" id="adminBackendURL" placeholder="https://your-eurovest-backend.onrender.com" style="font-family:monospace;">
+            <input type="text" class="form-input" id="adminBackendURL" placeholder="https://your-eurofiducia-backend.onrender.com" style="font-family:monospace;">
           </div>
           <button class="btn btn-primary" onclick="adminSaveBackendURL()">Save Backend URL</button>
           <p id="backendStatus" class="text-sm" style="margin-top:10px;"></p>
@@ -826,8 +826,8 @@ function rejectUser(userId) {
   if(u) {
     u.accountStatus = 'rejected';
     EV.store.set('users', users);
-    EV.mail.send(u.email, 'Account Application Update — EuroVest',
-      'Dear '+u.firstName+',\n\nUnfortunately, we were unable to approve your account application at this time. This may be due to incomplete verification details or compliance requirements.\n\nIf you believe this is an error, please contact our support team at support@eurovest.eu.\n\nThe EuroVest Compliance Team',
+    EV.mail.send(u.email, 'Account Application Update — EuroFiducia',
+      'Dear '+u.firstName+',\n\nUnfortunately, we were unable to approve your account application at this time. This may be due to incomplete verification details or compliance requirements.\n\nIf you believe this is an error, please contact our support team at support@eurofiducia.eu.\n\nThe EuroFiducia Compliance Team',
       {type:'account_rejected', userId:u.id});
     EV.notify.toast('Account Rejected', 'Rejection email sent to user.', 'info');
   }
@@ -863,7 +863,7 @@ function viewUserDetail(userId) {
   '</div>';
   if (u.accountNumber || u.memberId) {
     html += '<div class="ev-acct-card" style="margin:16px 0;padding:16px;border-radius:10px;background:linear-gradient(135deg,#0A1A3F,#0055A4);color:#fff;">'+
-      '<h5 style="margin:0 0 8px;color:#fff;">🦔 EuroVest Account Identifiers</h5>'+
+      '<h5 style="margin:0 0 8px;color:#fff;">🦔 EuroFiducia Account Identifiers</h5>'+
       '<div style="display:flex;gap:24px;flex-wrap:wrap;">'+
         '<div><div style="font-size:.75rem;opacity:.8;">Account Number</div><div style="font-family:monospace;font-size:1.1rem;font-weight:700;">'+(u.accountNumber||'N/A')+'</div></div>'+
         '<div><div style="font-size:.75rem;opacity:.8;">Client / Member ID</div><div style="font-family:monospace;font-size:1.1rem;font-weight:700;">'+(u.memberId||'N/A')+'</div></div>'+
@@ -1024,7 +1024,7 @@ function selectTemplate(tplId) {
   preview.style.color = '';
   preview.style.fontStyle = '';
   preview.innerHTML = '<div class="email-preview">'+
-    '<div class="email-head"><h5>📧 '+selectedTemplate.subject+'</h5><div class="meta">From: EuroVest Team &lt;no-reply@eurovest.eu&gt; · To: {user email} · Official EuroVest Email</div></div>'+
+    '<div class="email-head"><h5>📧 '+selectedTemplate.subject+'</h5><div class="meta">From: EuroFiducia Team &lt;no-reply@eurofiducia.eu&gt; · To: {user email} · Official EuroFiducia Email</div></div>'+
     '<div class="email-body">'+selectedTemplate.body.replace(/{name}/g, '<strong style="color:var(--brand-blue);">{User Name}</strong>')+'</div>'+
   '</div>';
 }
@@ -1485,7 +1485,7 @@ function adminResetPass(e) {
   e.preventDefault();
   var cur = document.getElementById('adminCurPass').value;
   var newp = document.getElementById('adminNewPass').value;
-  var admin = EV.store.get('admin', {email:'admin@eurovest.eu',password:'admin123'});
+  var admin = EV.store.get('admin', {email:'admin@eurofiducia.eu',password:'admin123'});
   if(admin.password !== cur){EV.notify.toast('Error','Current password is incorrect','danger');return false;}
   EV.auth.resetAdminPassword(newp);
   EV.notify.toast('Password Updated!','Admin password changed successfully','success');

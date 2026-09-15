@@ -1,4 +1,4 @@
-/* EUROVEST — Cross-Device Persistence & Sync Layer
+/* EUROFIDUCIA — Cross-Device Persistence & Sync Layer
    ===================================================
    This module makes EV.store survive redeploy AND work across devices.
 
@@ -23,7 +23,7 @@
 
   EV.sync = {
     // ---- CONFIG: set this to your backend URL (or leave '' for local-only) ----
-    // e.g. 'https://eurovest-backend.onrender.com'
+    // e.g. 'https://eurofiducia-backend.onrender.com'
     // Auto-detect: use the same origin as the page (works on Railway where server + static are same host)
     serverURL: (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : '',
 
